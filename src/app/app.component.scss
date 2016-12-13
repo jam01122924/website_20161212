@@ -1,0 +1,35 @@
+@import '../color';
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.app-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image: url('assets/imgs/blueprint-bg-dk.jpg');
+	background-repeat: repeat;
+	color: $main-color;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+
+	.app-bg-cover {
+		position: fixed;
+		background-color: rgba(0,0,0,0.5);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.app-header {
+		position: relative;
+		overflow:auto;
+	}
+	.main-container {
+		position: relative;
+		overflow-y: scroll;
+		text-align: center
+	}
+}

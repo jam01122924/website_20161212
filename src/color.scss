@@ -1,0 +1,162 @@
+$main-bg-color: #060540;
+$main-color: #F0F0F0;
+$main-border-color: #101010;
+
+$color-gray95: #F3F3F3;
+$color-gray90: #E6E6E6;
+$color-gray85: #CCCCCC;
+$color-gray80: #C0C0C0;
+$color-gray75: #B3B3B3;
+$color-gray70: #A6A6A6;
+$color-gray65: #989898;
+$color-gray60: #8C8C8C;
+$color-gray55: #808080;
+$color-gray50: #747474;
+$color-gray45: #686868;
+$color-gray40: #5C5C5C;
+$color-gray35: #505050;
+$color-gray30: #444444;
+$color-gray25: #383838;
+$color-gray20: #2E2E2E;
+$color-gray15: #222222;
+$color-gray10: #171717;
+$color-gray5: #0C0C0C;
+
+$color-black-trans10: rgba(0, 0, 0, 0.1);
+$color-black-trans20: rgba(0, 0, 0, 0.2);
+$color-black-trans30: rgba(0, 0, 0, 0.3);
+$color-black-trans40: rgba(0, 0, 0, 0.4);
+$color-black-trans50: rgba(0, 0, 0, 0.5);
+$color-black-trans60: rgba(0, 0, 0, 0.6);
+$color-black-trans70: rgba(0, 0, 0, 0.7);
+$color-black-trans80: rgba(0, 0, 0, 0.8);
+$color-black-trans90: rgba(0, 0, 0, 0.9);
+
+$color-white-trans10: rgba(255, 255, 255, 0.1);
+$color-white-trans20: rgba(255, 255, 255, 0.2);
+$color-white-trans30: rgba(255, 255, 255, 0.3);
+$color-white-trans40: rgba(255, 255, 255, 0.4);
+$color-white-trans50: rgba(255, 255, 255, 0.5);
+$color-white-trans60: rgba(255, 255, 255, 0.6);
+$color-white-trans70: rgba(255, 255, 255, 0.7);
+$color-white-trans80: rgba(255, 255, 255, 0.8);
+$color-white-trans90: rgba(255, 255, 255, 0.9);
+
+$color-red10: #330502;
+$color-red20: #540803;
+$color-red30: #7a0c04;
+$color-red40: #a81106;
+$color-red50: #d61608;
+$color-red60: #ff3232;
+$color-red70: #ff6669;
+$color-red80: #ff8e97;
+$color-red90: #ffd0da;
+
+$color-red-trans10: rgba(214, 22, 8, 0.1);
+$color-red-trans20: rgba(214, 22, 8, 0.2);
+$color-red-trans30: rgba(214, 22, 8, 0.3);
+$color-red-trans40: rgba(214, 22, 8, 0.4);
+$color-red-trans50: rgba(214, 22, 8, 0.5);
+$color-red-trans60: rgba(214, 22, 8, 0.6);
+$color-red-trans70: rgba(214, 22, 8, 0.7);
+$color-red-trans80: rgba(214, 22, 8, 0.8);
+$color-red-trans90: rgba(214, 22, 8, 0.9);
+
+$color-green10: #002b01;
+$color-green20: #084b09;
+$color-green30: #0c700d;
+$color-green40: #119312;
+$color-green50: #16c318;
+$color-green60: #20f623;
+$color-green70: #57ff54;
+$color-green80: #90ff89;
+$color-green90: #bcffb4;
+
+$color-green-trans10: rgba(32, 246, 35, 0.1);
+$color-green-trans20: rgba(32, 246, 35, 0.2);
+$color-green-trans30: rgba(32, 246, 35, 0.3);
+$color-green-trans40: rgba(32, 246, 35, 0.4);
+$color-green-trans50: rgba(32, 246, 35, 0.5);
+$color-green-trans60: rgba(32, 246, 35, 0.6);
+$color-green-trans70: rgba(32, 246, 35, 0.7);
+$color-green-trans80: rgba(32, 246, 35, 0.8);
+$color-green-trans90: rgba(32, 246, 35, 0.9);
+
+$color-blue10: #091820;
+$color-blue20: #0E2030;
+$color-blue30: #142840;
+$color-blue40: #193050;
+$color-blue50: #1E3860;
+$color-blue60: #244070;
+$color-blue70: #294880;
+$color-blue80: #2E5090;
+$color-blue90: #3458A5;
+$color-blue95: #499bF5;
+$color-blue95: #499bF5;
+
+$color-blue-light10: #2452f5;
+$color-blue-light20: #3368f5;
+$color-blue-light30: #3076f5;
+$color-blue-light40: #2799f5;
+$color-blue-light50: #27abf5;
+$color-blue-light60: #20c1f5;
+$color-blue-light70: #15e0f5;
+$color-blue-light80: #40fdf0;
+$color-blue-light90: #87fdf1;
+
+$color-blue-light-trans10: rgba(135, 240, 245, 0.1);
+$color-blue-light-trans20: rgba(135, 240, 245, 0.2);
+$color-blue-light-trans30: rgba(135, 240, 245, 0.3);
+$color-blue-light-trans40: rgba(135, 240, 245, 0.4);
+$color-blue-light-trans50: rgba(135, 240, 245, 0.5);
+$color-blue-light-trans60: rgba(135, 240, 245, 0.6);
+$color-blue-light-trans70: rgba(135, 240, 245, 0.7);
+$color-blue-light-trans80: rgba(135, 240, 245, 0.8);
+$color-blue-light-trans90: rgba(135, 240, 243, 0.9);
+
+$color-yellow10: #5d5700;
+$color-yellow20: #888100;
+$color-yellow30: #a89d00;
+$color-yellow40: #dacd00;
+$color-yellow50: #fff700;
+$color-yellow60: #fffd3b;
+$color-yellow70: #fff878;
+$color-yellow80: #fffbc0;
+$color-yellow90: #fffdd1;
+
+$color-yellow-trans10: rgba(255, 255, 0, 0.1);
+$color-yellow-trans20: rgba(255, 255, 0, 0.2);
+$color-yellow-trans30: rgba(255, 255, 0, 0.3);
+$color-yellow-trans40: rgba(255, 255, 0, 0.4);
+$color-yellow-trans50: rgba(255, 255, 0, 0.5);
+$color-yellow-trans60: rgba(255, 255, 0, 0.6);
+$color-yellow-trans70: rgba(255, 255, 0, 0.7);
+$color-yellow-trans80: rgba(255, 255, 0, 0.8);
+$color-yellow-trans90: rgba(255, 255, 0, 0.9);
+
+$color-orange10: #5d300d;
+$color-orange20: #7d4111;
+$color-orange30: #9c5115;
+$color-orange40: #a94f0d;
+$color-orange50: #bc580f;
+$color-orange60: #d26211;
+$color-orange70: #fa7514;
+$color-orange80: #ff9c54;
+$color-orange90: #ffb598;
+
+$color-orange-trans10: rgba(188, 88, 15, 0.1);
+$color-orange-trans20: rgba(188, 88, 15, 0.2);
+$color-orange-trans30: rgba(188, 88, 15, 0.3);
+$color-orange-trans40: rgba(188, 88, 15, 0.4);
+$color-orange-trans50: rgba(188, 88, 15, 0.5);
+$color-orange-trans60: rgba(188, 88, 15, 0.6);
+$color-orange-trans70: rgba(188, 88, 15, 0.7);
+$color-orange-trans80: rgba(188, 88, 15, 0.8);
+$color-orange-trans90: rgba(188, 88, 15, 0.9);
+
+$color-danger: #a03f36;
+$color-warning: #8b6905;
+$color-info: #1b5070;
+$color-success: #17440C;
+$color-success-light: #10bc14;
+

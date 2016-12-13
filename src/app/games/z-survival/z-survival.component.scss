@@ -1,0 +1,13 @@
+@import '../../../color';
+
+.game-container {
+  // Global style for z-survival:
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-gray10;
+  color: $color-gray80;
+  padding: 10px;
+}

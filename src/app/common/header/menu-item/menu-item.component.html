@@ -1,0 +1,8 @@
+<div [ngClass]="{'menu-item-sm': w<360, 'menu-item-md': w>=360&&w<730, 'menu-item-bg': w>=730}" class="head-menu-item">
+	<div class="menu-item-hover-box" [ngClass]="{'menu-item-hover-animation': w>=360}">
+		<a [routerLink]="[routeUrl]">
+			<img [ngClass]="{'menu-img-sm': w<360, 'menu-img-md': w>=360&&w<730, 'menu-img-bg': w>=730}" [src]="imgUrl" />
+			<div [ngClass]="{'menu-text-sm': w<360, 'menu-text-md': w>=360&&w<730, 'menu-text-bg': w>=730}">{{menuName}}</div>
+		</a>
+	</div>
+</div>

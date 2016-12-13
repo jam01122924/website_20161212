@@ -1,0 +1,24 @@
+.z-main-out-container {
+  width: 100%;
+  height: 100%;
+  .loading-ui {
+    width: 100%;
+    height: 100%;
+    margin-top: 45vh;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .z-main-container {
+    width: 100%;
+    height: 100%;
+
+    .z-bottom-menu-box {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+

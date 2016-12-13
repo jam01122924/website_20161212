@@ -1,0 +1,101 @@
+<div class="register-container">
+  <div class="register-content">
+    <div *ngIf="!success">
+      <form novalidate (ngSubmit)="register(registerForm.value)" [formGroup]="registerForm">
+      <div class="form-group">
+        <label>User Name: <span [hidden]="!registerForm.controls.userName.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="userName" [formControl]="registerForm.controls['userName']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.userName.valid || (registerForm.controls.userName.pristine && !submitted)" class="text-danger">
+            Name is required (minimum 5 characters).
+          </div>
+          <div class="text-danger">
+            <div *ngFor = "let errorInfo of error.username">
+              {{errorInfo}}
+            </div>
+          </div>
+        </div>
+        <label>Email: <span [hidden]="!registerForm.controls.email.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="email" class="form-control" formControlName="email" [formControl]="registerForm.controls['email']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.email.valid || (registerForm.controls.email.pristine && !submitted)" class="login-error-info text-danger">
+            Vaild Email is required.
+          </div>
+        </div>
+        <label>Password: <span [hidden]="!registerForm.controls.password.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="password" class="form-control" formControlName="password" [formControl]="registerForm.controls['password']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.password.valid || (registerForm.controls.password.pristine && !submitted)" class="login-error-info text-danger">
+            Password is required (minimum 8 characters).
+          </div>
+        </div>
+        <label>Confirm Password: <span [hidden]="!registerForm.controls.repeat.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="password" class="form-control" formControlName="repeat" [formControl]="registerForm.controls['repeat']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.repeat.valid || (registerForm.controls.repeat.pristine && !submitted)" class="login-error-info text-danger">
+            Please repeat your password(They have to match).
+          </div>
+        </div>
+
+        <label>Security Question 1: <span [hidden]="!registerForm.controls.sq1.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sq1" [formControl]="registerForm.controls['sq1']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sq1.valid || (registerForm.controls.sq1.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your first security question(minimum 10 characters).
+          </div>
+        </div>
+        <label>Security Question 1 Answer: <span [hidden]="!registerForm.controls.sqa1.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sqa1" [formControl]="registerForm.controls['sqa1']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sqa1.valid || (registerForm.controls.sqa1.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your first security question answer(minimum 5 characters). You need to remember this if you forgot your password.
+          </div>
+        </div>
+
+        <label>Security Question 2: <span [hidden]="!registerForm.controls.sq2.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sq2" [formControl]="registerForm.controls['sq2']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sq2.valid || (registerForm.controls.sq2.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your second security question(minimum 10 characters).
+          </div>
+        </div>
+        <label>Security Question 2 Answer: <span [hidden]="!registerForm.controls.sqa2.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sq2" [formControl]="registerForm.controls['sqa2']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sqa2.valid || (registerForm.controls.sqa2.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your second security question answer(minimum 5 characters). You need to remember this if you forgot your password.
+          </div>
+        </div>
+
+        <label>Security Question 3: <span [hidden]="!registerForm.controls.sq3.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sq3" [formControl]="registerForm.controls['sq3']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sq3.valid || (registerForm.controls.sq3.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your second third question(minimum 10 characters).
+          </div>
+        </div>
+        <label>Security Question 3 Answer: <span [hidden]="!registerForm.controls.sqa3.valid" class="text-success"><i class="fa fa-check" aria-hidden="true"></i></span></label>
+        <input type="text" class="form-control" formControlName="sqa3" [formControl]="registerForm.controls['sqa3']">
+        <div class="login-error-info-container">
+          <div [hidden]="registerForm.controls.sqa3.valid || (registerForm.controls.sqa3.pristine && !submitted)" class="login-error-info text-danger">
+            Please enter your second third question answer(minimum 10 characters). You need to remember this if you forgot your password.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!registerForm.valid"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</button>
+      <!--<button type="button" class="btn btn-default" (click)="registerSuccess()">test success</button>-->
+      <div class="clearfix"></div>
+    </form>
+    </div>
+    <div *ngIf="success">
+      <div class="successInfo-container">
+        <h1 class="text-success successInfo-title"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Congratulation!</h1>
+        <div class="successInfo-content">
+          <p>You have successfully created your account.</p>
+          <p>You will be redirect to login page in {{redirectTime}} seconds</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

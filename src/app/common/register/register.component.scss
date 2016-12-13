@@ -1,0 +1,22 @@
+.register-container {
+  overflow-y: scroll;
+  .login-error-info-container {
+    margin-bottom: 10px;
+    min-height: 20px;
+  }
+  .successInfo-container {
+    width: 100%;
+    text-align: center;
+  }
+  .successInfo-title {
+    margin: 80px;
+  }
+  .successInfo-content {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+}
+
+.register-container::-webkit-scrollbar {
+    display: none;
+}

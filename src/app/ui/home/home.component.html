@@ -1,0 +1,18 @@
+<div>
+  <button (click)="getUserData()">getData Test</button>
+  <div>
+    <ul>
+      <li *ngFor="let item of dataResult">
+        {{item.id}} {{item.username}} {{item.is_staff?'Staff':'NonStaff'}}
+        <p>Character:</p>
+        <ul>
+          <li *ngFor="let character of item.characters">{{character.id}} {{character.name}} {{character.sex}} {{character.created}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <app-login></app-login>
+  </div>
+</div>

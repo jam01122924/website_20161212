@@ -1,0 +1,24 @@
+<div class="container main-header">
+  <div class="main-header-logo" [ngClass]="{'main-header-logo-sm': w<360, 'main-header-logo-md': w>=360&&w<992, 'main-header-logo-bg': w>=992}" >
+    <div class="main-header-logo-text">
+      <span>WorkBench</span>
+      <span *ngIf="w<992" class="pull-right">
+        <span class="main-header-expend-btn" (click)="clickMenu()">
+          Menu
+        </span>
+      </span>
+    </div>
+    <!--<img class="main-header-logo-pic-bg" src="assets/imgs/head/head-center-bg.png" *ngIf="w>=992">-->
+  </div>
+  <div class="main-header-menu-left" *ngIf="w>=992">
+      <app-menu-item class="app-menu-item" *ngFor = "let item of linksLeft; let i = index" [menuItem]="item" [w]="w" [h]="h"></app-menu-item>
+  </div>
+  <div class="main-header-menu-right" *ngIf="w>=992">
+      <app-menu-item class="app-menu-item" *ngFor = "let item of linksRight; let i = index" [menuItem]="item" [w]="w" [h]="h"></app-menu-item>
+  </div>
+  <div class="main-header-menu-bottom" *ngIf="w<992" [ngClass]="{'main-header-menu-bottom-hide': !_ms.expend}">
+      <app-menu-item [ngClass]="{'app-menu-item-md': w>=360, 'app-menu-item-sm': w<360}" *ngFor = "let item of linksLeft; let i = index" [menuItem]="item" [w]="w" [h]="h"></app-menu-item>
+      <div class="app-menu-item-md-divide" *ngIf="w>=360&&w<992"></div>
+      <app-menu-item [ngClass]="{'app-menu-item-md': w>=360, 'app-menu-item-sm': w<360}" *ngFor = "let item of linksRight; let i = index" [menuItem]="item" [w]="w" [h]="h"></app-menu-item>
+  </div>
+</div>

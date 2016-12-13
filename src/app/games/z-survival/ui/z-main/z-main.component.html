@@ -1,0 +1,15 @@
+<div class="z-main-out-container">
+  <div class="loading-ui" *ngIf="!loadingComplete">
+    <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+    <p>Loading...</p>
+  </div>
+  <div class="z-main-container" *ngIf="loadingComplete">
+    <div class="z-top-header-box">
+      <app-z-main-header></app-z-main-header>
+    </div>
+    <router-outlet></router-outlet>
+    <div class="z-bottom-menu-box">
+      <app-z-bottom-menu [w]="w" [h]="h"></app-z-bottom-menu>
+    </div>
+  </div>
+</div>

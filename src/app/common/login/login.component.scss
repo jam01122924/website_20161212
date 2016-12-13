@@ -1,0 +1,40 @@
+@import '../../../font';
+@import '../../../color';
+
+.login-container {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+  min-width: 290px;
+  margin: auto;
+  margin-top: 20px;
+
+  .login-content {
+    .panel {
+      border: solid #444444 2px;
+      border-radius: 4px;
+      //background: $color-gray85; /* For browsers that do not support gradients */
+      //background: -webkit-linear-gradient($color-gray70, $color-gray85, $color-gray75, $color-gray55); /* For Safari 5.1 to 6.0 */
+      //background: -o-linear-gradient($color-gray70, $color-gray85, $color-gray75, $color-gray55); /* For Opera 11.1 to 12.0 */
+      //background: -moz-linear-gradient($color-gray70, $color-gray85, $color-gray75, $color-gray55); /* For Firefox 3.6 to 15 */
+      //background: linear-gradient($color-gray70, $color-gray85, $color-gray75, $color-gray55); /* Standard syntax */
+      //.panel-heading {
+      //  background: $color-gray85;
+      //}
+    }
+    label {
+      font-size: 14px;
+    }
+    color: $color-gray35;
+
+    .login-panel-links{
+      margin: 8px 0px 8px 20px;
+      a {
+        cursor: pointer;
+      }
+    }
+    .login-error-info {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'font';
+@import 'color';
+@import 'parallax';
+
+.clearfix {
+  float: none !important;
+  overflow: auto;
+}
+.warn {
+  color: $color-warning;
+}
+.danger {
+  color: $color-danger;
+}
+.info {
+  color: $color-info;
+}
+.success {
+  color: $color-success;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.container {
+  width: 100%;
+}

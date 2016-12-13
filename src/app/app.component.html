@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div class="app-container">
+  <div class="forefront-element">
+    <div>
+      <app-header [w]="w" [h]="h"></app-header>
+    </div>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!--<div class="parallax">-->
+    <!--<div class="parallax_group">-->
+      <!--<div class="base-element bg-element"><img src="assets/imgs/roll/tree_001.png"></div>-->
+      <!--<div class="background-element bg-element"><img src="assets/imgs/roll/city.png"></div>-->
+      <!--<div class="deep-background-element bg-element"><img src="assets/imgs/roll/sky.jpg"></div>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
