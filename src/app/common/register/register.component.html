@@ -7,7 +7,7 @@
         <input type="text" class="form-control" formControlName="userName" [formControl]="registerForm.controls['userName']">
         <div class="login-error-info-container">
           <div [hidden]="registerForm.controls.userName.valid || (registerForm.controls.userName.pristine && !submitted)" class="text-danger">
-            Name is required (minimum 5 characters).
+            Name is required (5-30 characters).
           </div>
           <div class="text-danger">
             <div *ngFor = "let errorInfo of error.username">

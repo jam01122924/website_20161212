@@ -1,0 +1,61 @@
+@import "../../../../../color";
+
+.z-confirm-panel-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-black-trans90;
+  .z-confirm-panel-content {
+    margin: auto;
+    position: relative;
+    width: 40%;
+    min-width: 280px;
+    top: 20%;
+    border: 1px solid $color-green40;
+    background-color: $color-green10;
+    border-radius: 5px;
+		/* Set our transitions up. */
+		-webkit-transition: max-height 0.8s;
+		-moz-transition: max-height 0.8s;
+		transition: max-height 0.8s;
+    animation-name: animation-fadeTopIn;
+    animation-duration: 1.2s;
+    -webkit-animation-name: animation-fadeTopIn; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1.2s; /* Chrome, Safari, Opera */
+    .z-confirm-panel-head {
+      border-bottom: 1px solid $color-green40;
+      padding: 8px;
+      background-color: $color-green90;
+      border-radius: 5px 5px 0 0;
+    }
+    .z-confirm-panel-body {
+      padding: 8px;
+      .z-confirm-panel-info {
+        margin: 20px 8px;
+        font-size: 1.2em;
+        line-height: 130%;
+      }
+      .z-confirm-panel-confirmInfo {
+        margin: 40px 8px 0 8px;
+        font-size: 1.2em;
+        line-height: 130%;
+      }
+      .z-confirm-panel-btn-group {
+        position: relative;
+        margin: 0 8px;
+        width: 100%;
+        height: 54px;
+        .z-confirm-panel-cancel-btn {
+          position: absolute;
+          left: 0;
+        }
+        .z-confirm-panel-confirm-btn {
+          position: absolute;
+          right: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { SHARED_FORM_DIRECTIVES } from "@angular/forms/src/directives";
 import { Observable } from 'rxjs/Rx';
 
 import { AuthService } from '../../services/auth.service';
@@ -10,7 +9,6 @@ import { TokenService } from '../../services/token.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  directives: [SHARED_FORM_DIRECTIVES]
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = null;

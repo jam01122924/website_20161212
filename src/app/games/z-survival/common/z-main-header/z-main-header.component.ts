@@ -8,11 +8,15 @@ import { AuthService } from "../../../../services/auth.service";
   styleUrls: ['./z-main-header.component.scss']
 })
 export class ZMainHeaderComponent implements OnInit {
+  public characterIcon: string;
 
   constructor(private authS: AuthService) { }
 
   ngOnInit() {
-    this.authS.getUserDetailData().subscribe(data=>console.log(data));
+    this.authS.getUserDetailData().subscribe(data=>{
+      console.log(data);
+      this.characterIcon = 'assets/imgs/games/z-survival/head-icon/0001.png'
+    });
   }
 
 }

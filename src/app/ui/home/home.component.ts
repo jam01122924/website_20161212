@@ -1,28 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { TokenService } from '../../services/token.service';
-
-import { LoginComponent } from '../../common/login/login.component';
+import { DeviceService } from '../../services/device.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  inputs: ['w', 'h']
 })
 export class HomeComponent implements OnInit {
-  dataResult = [];
-  constructor(private authS: AuthService) { }
+	w: number;
+	h: number;
+	bgImgs: Array<string>;
+	contentText: Array<string>;
+  constructor(private _ds: DeviceService) { }
 
   ngOnInit() {
+    this._ds.height$.subscribe(data => this.h = data);
+		this._ds.width$.subscribe(data => this.w = data);
+		this.bgImgs = [
+			'intro',
+			'thoughts',
+			'workBench',
+			'product'
+		];
+		this.contentText = [
+			'intro',
+			'thoughts',
+			'workBench',
+			'product'
+		];
   }
 
-  public getUserData() {
-    this.authS.getUserData().subscribe(data => {
-      if(data) {
-        this.dataResult = data;
-      }
-    }, error => {
-        console.log(error);
-    });
-  }
 }

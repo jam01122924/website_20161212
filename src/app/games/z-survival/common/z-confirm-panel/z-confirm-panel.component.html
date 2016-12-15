@@ -1,0 +1,21 @@
+<div class="z-confirm-panel-container">
+  <div class="z-confirm-panel-content">
+    <div class="z-confirm-panel-head">
+      <div class="{{data.panelType}}">
+        {{data.head}}
+      </div>
+    </div>
+    <div class="z-confirm-panel-body">
+      <div class="z-confirm-panel-info">
+        <i class="fa fa-exclamation-triangle {{data.panelType}}" aria-hidden="true" *ngIf="data.panelType==='warn'||data.panelType==='danger'"></i>
+        <i class="fa fa-exclamation-circle {{data.panelType}}" aria-hidden="true" *ngIf="data.panelType==='info'||data.panelType==='success'"></i>
+        {{data.info}}
+      </div>
+      <div class="z-confirm-panel-confirmInfo">{{data.confirmInfo}}</div>
+      <div class="z-confirm-panel-btn-group">
+        <button class="btn btn-default z-survival-btn z-confirm-panel-cancel-btn" *ngIf="data.hasCancelBtn" (click)="result(false)" [disabled]="_clicked">Cancel</button>
+        <button class="btn btn-default z-survival-btn z-confirm-panel-confirm-btn" (click)="result(true)" [disabled]="_clicked">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

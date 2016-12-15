@@ -1,0 +1,33 @@
+@import '../../../../../color';
+.start-menu-content {
+  height: 100vh;
+  .open-tale-intro-img-container {
+    width: 100vw;
+    position: fixed;
+    left: 0px;
+    top: 5vh;
+    height:90vh;
+    overflow: hidden;
+    .open-tale-intro-img-relative-layer {
+      width: 100vw;
+      position: relative;
+      height: 100%;
+      .open-tale-intro-img {
+        width: 100vw;
+        height: auto;
+        position: absolute;
+        top: 30%;
+        transform: translateY(-30%);
+      }
+    }
+  }
+
+  .start-menu-group {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    top: 60%;
+  }
+
+}

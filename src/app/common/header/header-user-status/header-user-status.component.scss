@@ -1,0 +1,35 @@
+@import '../../../../color';
+
+.head-user-status-container {
+  position: absolute;
+  top: 2px;
+  right: 50px;
+  margin-right: 10px;
+  .head-user-status-content {
+    a {
+      color: $color-gray90;
+      cursor: pointer;
+    }
+    a:hover {
+		  color: #FDE357;
+      text-decoration: none;
+    }
+    a:link {
+      text-decoration: none;
+    }
+  }
+  .user {
+    color: $color-gray90;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+  }
+  .user:hover {
+    color: #FDE357;
+    text-decoration: none;
+  }
+}

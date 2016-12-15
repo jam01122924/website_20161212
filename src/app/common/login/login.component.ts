@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
   public login() {
     this.authS.login(this.userName, this.password).subscribe(data => {
       if(data.token) {
-        this.tokenS.token = data.token;
         // console.log(this.tokenS.token);
-        this.loginError = '';
-        this.authS.loggedIn = true;
+        this.tokenS.token = data.token;
         this.authS.getUserData().subscribe(data => {
+          this.loginError = '';
+          this.authS.loggedIn = true;
           this.authS.currentUser = data[0];
           this.router.navigate([this.authS.returnUrl]);
         }, error => {

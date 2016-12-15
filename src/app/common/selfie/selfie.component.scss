@@ -1,0 +1,42 @@
+@import '../../../font';
+@import '../../../color';
+
+.selfie-container {
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  img {
+    width: 100%;
+  }
+  .selfie-carousel {
+    background-color: white;
+    height: 200px;
+    font-family: airstrike;
+    color: $color-gray85;
+  }
+}
+
+.selfie-container:before, .selfie-container:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  background-image: url('imgs/selfie/paper_edge.png');
+  background-size: 100%;
+}
+
+.selfie-container:before {
+  top: 0px;
+}
+.selfie-container:after {
+  bottom: 0px;
+}
+.left {
+  background-color: #E04565;
+  height: 100px;
+}
+.right {
+  background-color: #6045E5;
+  height: 100px;
+}

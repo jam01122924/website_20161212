@@ -18,5 +18,31 @@
       color: $color-green50;
       text-decoration: none;
     }
+    a:link {
+      text-decoration: none;
+    }
+  }
+}
+@media screen and (min-width: 500px) {
+  .z-bottom-menu-item-text {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 499px) and (min-width: 340px)  {
+  .z-bottom-menu-item-text {
+    font-size: 0.8em;
+    display: block;
+  }
+}
+@media screen and (max-width: 339px) and (min-width: 290px) {
+  .z-bottom-menu-item-text {
+    font-size: 0.6em;
+    display: block;
+  }
+}
+@media screen and (max-width: 289px) {
+  .z-bottom-menu-item-text {
+    font-size: 0.48em;
+    display: block;
   }
 }

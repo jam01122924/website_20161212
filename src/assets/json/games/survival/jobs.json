@@ -1,0 +1,291 @@
+{
+  "data": {
+    "basic": [
+      {
+        "name": "Construction Worker",
+        "id": "job001",
+        "requirement": {},
+        "str": 3,
+        "pec": 2,
+        "end": 2,
+        "cha": 1,
+        "int": 1,
+        "agi": 2,
+        "luc": 1,
+        "description": "Working in the construction sites makes you stronger. You can beat others easily in a melee fight. And you can carry more weight with you."
+      },
+      {
+        "name": "Waiter/Waitress",
+        "id": "job002",
+        "requirement": {},
+        "str": 1,
+        "pec": 3,
+        "end": 2,
+        "cha": 2,
+        "int": 1,
+        "agi": 2,
+        "luc": 1,
+        "description": "Serving so many coffees and burgers makes your move more accurate. You are more likely to hit the target in a fight."
+      },
+      {
+        "name": "Office Worker",
+        "id": "job003",
+        "requirement": {},
+        "str": 1,
+        "pec": 2,
+        "end": 3,
+        "cha": 2,
+        "int": 2,
+        "agi": 1,
+        "luc": 1,
+        "description": "Comparing to endless overtime work, survive in the wild is not that exhausting for you. You have better stamina than others."
+      },
+      {
+        "name": "Salesman",
+        "id": "job004",
+        "requirement": {},
+        "str": 1,
+        "pec": 1,
+        "end": 2,
+        "cha": 3,
+        "int": 2,
+        "agi": 1,
+        "luc": 2,
+        "description": "It is a talent for you to easily make conversation with anyone. People tend to like you, and you get advantages on both purchase and sale items."
+      },
+      {
+        "name": "Programmer",
+        "id": "job005",
+        "requirement": {},
+        "str": 1,
+        "pec": 2,
+        "end": 2,
+        "cha": 1,
+        "int": 3,
+        "agi": 1,
+        "luc": 2,
+        "description": "You gotta be smart and well educated to be a good programmer. You learn things faster than others. And you have a better understanding of high tech stuff."
+      },
+      {
+        "name": "Basketball Player",
+        "id": "job006",
+        "requirement": {},
+        "str": 1,
+        "pec": 2,
+        "end": 2,
+        "cha": 1,
+        "int": 2,
+        "agi": 3,
+        "luc": 1,
+        "description": "You like playing basketball. Now it pays you back. You move faster than others, you think you can dodge a bullet if you are fast enough."
+      },
+      {
+        "name": "Gambler",
+        "id": "job007",
+        "requirement": {},
+        "str": 1,
+        "pec": 2,
+        "end": 1,
+        "cha": 2,
+        "int": 1,
+        "agi": 2,
+        "luc": 3,
+        "description": "Fate is a real thing for you. You can sense it with your nose, while other people just think you are so lucky."
+      }
+    ],
+    "advanced": [
+      {
+        "name": "Warrior",
+        "id": "job101",
+        "requirement": {
+          "lv": 30,
+          "special": [2,0,0,0,0,0,0]
+        },
+        "str": 3,
+        "pec": 2,
+        "end": 2,
+        "cha": 1,
+        "int": 1,
+        "agi": 2,
+        "luc": 1,
+        "description": "Warriors performs heavy punch in a close fight."
+      },
+      {
+        "name": "Swordman",
+        "id": "job102",
+        "requirement": {
+          "lv": 30,
+          "special": [2,0,0,0,0,0,0]
+        },
+        "str": 2,
+        "pec": 2,
+        "end": 1,
+        "cha": 1,
+        "int": 1,
+        "agi": 4,
+        "luc": 1,
+        "description": "Swordman performs fast attack in a close fight."
+      },
+      {
+        "name": "Hunter",
+        "id": "job111",
+        "requirement": {
+          "lv": 30,
+          "special": [0,2,0,0,0,0,0]
+        },
+        "str": 2,
+        "pec": 2,
+        "end": 3,
+        "cha": 1,
+        "int": 1,
+        "agi": 2,
+        "luc": 1,
+        "description": "Hunters are rangers who are also good at melee fight."
+      },
+      {
+        "name": "Sniper",
+        "id": "job112",
+        "requirement": {
+          "lv": 30,
+          "special": [0,2,0,0,0,0,0]
+        },
+        "str": 1,
+        "pec": 4,
+        "end": 2,
+        "cha": 1,
+        "int": 1,
+        "agi": 2,
+        "luc": 1,
+        "description": "Snipers are vulnerable in melee fight. But they are very deadly in distance."
+      },
+      {
+        "name": "Knight",
+        "id": "job121",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,2,0,0,0,0]
+        },
+        "str": 2,
+        "pec": 2,
+        "end": 3,
+        "cha": 2,
+        "int": 1,
+        "agi": 1,
+        "luc": 1,
+        "description": "Knight protects others with his shield and faith."
+      },
+      {
+        "name": "Bodybuilder",
+        "id": "job122",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,2,0,0,0,0]
+        },
+        "str": 3,
+        "pec": 1,
+        "end": 4,
+        "cha": 1,
+        "int": 1,
+        "agi": 1,
+        "luc": 1,
+        "description": "Bodybuilder protects others with his body and fist."
+      },
+      {
+        "name": "Businessman",
+        "id": "job131",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,2,0,0,0]
+        },
+        "str": 1,
+        "pec": 1,
+        "end": 2,
+        "cha": 3,
+        "int": 2,
+        "agi": 1,
+        "luc": 2,
+        "description": "Business is business."
+      },
+      {
+        "name": "Speaker",
+        "id": "job132",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,2,0,0,0]
+        },
+        "str": 1,
+        "pec": 1,
+        "end": 2,
+        "cha": 4,
+        "int": 2,
+        "agi": 1,
+        "luc": 1,
+        "description": "Speakers can talk people into something with no effort."
+      },
+      {
+        "name": "Leader",
+        "id": "job141",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,0,2,0,0]
+        },
+        "str": 1,
+        "pec": 1,
+        "end": 2,
+        "cha": 3,
+        "int": 3,
+        "agi": 1,
+        "luc": 1,
+        "description": "A Team Leader need to be charm and smart."
+      },
+      {
+        "name": "nerd",
+        "id": "job142",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,0,2,0,0]
+        },
+        "str": 1,
+        "pec": 2,
+        "end": 2,
+        "cha": 0,
+        "int": 5,
+        "agi": 1,
+        "luc": 1,
+        "description": "Just shut up and let me do my job!"
+      },
+      {
+        "name": "Fighter",
+        "id": "job151",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,0,0,2,0]
+        },
+        "str": 2,
+        "pec": 2,
+        "end": 2,
+        "cha": 1,
+        "int": 1,
+        "agi": 3,
+        "luc": 1,
+        "description": "Fighter performs good in close fight with light weapons."
+      },
+      {
+        "name": "Thief",
+        "id": "job152",
+        "requirement": {
+          "lv": 30,
+          "special": [0,0,0,0,0,2,0]
+        },
+        "str": 2,
+        "pec": 2,
+        "end": 1,
+        "cha": 1,
+        "int": 1,
+        "agi": 4,
+        "luc": 1,
+        "description": "Thief move fast and attack fast. But they cannot take too much damage."
+      }
+    ]
+  }
+}

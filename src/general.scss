@@ -1,0 +1,79 @@
+@import './font';
+@import './color';
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clear-float:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.modal-backdrop {
+  z-index: -1;
+  opacity: 0.7;
+}
+.modal-dialog {
+  z-index: 1050;
+}
+
+.gs-btn {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  text-align: center;
+  color: $color-gray85;
+  border: 3px solid $color-gray85;
+}
+.gs-btn:hover {
+  color: $color-blue-light40;
+  border-color: $color-blue-light40;
+}
+.gs-btn:active {
+  color: $color-gray45;
+  border-color: $color-gray45;
+}
+
+.gs-btn-lg {
+  padding: 18px;
+  font-size: 28px;
+  border-width: 3px;
+  border-radius: 8px;
+}
+.gs-btn-md {
+  padding: 12px;
+  font-size: 20px;
+  border-width: 2px;
+  border-radius: 5px;
+}
+.gs-btn-sm {
+  padding: 8px;
+  font-size: 12px;
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.z-survival-btn {
+  min-width: 80px !important;
+  margin: 10px auto !important;
+  font-size: 16px !important;
+  font-weight: bolder !important;
+  border: 1px solid $color-green40 !important;
+  background-color: $color-green10 !important;
+  color: $color-green40 !important;
+}
+.z-survival-btn:hover {
+  background-color: $color-green20 !important;
+  color: $color-gray70 !important;
+}

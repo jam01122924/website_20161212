@@ -1,0 +1,37 @@
+@import '../../../../../color';
+.open-tale-intro-img-container {
+  width: 100vw;
+  position: fixed;
+  left: 0px;
+  height:100vh;
+  overflow: hidden;
+  .open-tale-intro-img-relative-layer {
+    width: 100vw;
+    position: relative;
+    height: 100%;
+    .open-tale-intro-img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.open-tale-intro-text {
+  width: 94%;
+  margin: 3% 3% 20px 3%;
+  border: 1px double $color-green40;
+  background-color: $color-black-trans80;
+  min-height: 120px;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 10px 20px 10px;
+  font-size: 16px;
+}
+.open-tale-intro-continue-container {
+  position: absolute;
+  bottom: 25px;
+  right: 35px;
+  color: $color-gray45;
+}

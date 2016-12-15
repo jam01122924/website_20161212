@@ -1,0 +1,22 @@
+<div class="start-menu-container">
+  <div class="start-menu-content">
+    <div class="open-tale-intro-img-container">
+      <div class="open-tale-intro-img-relative-layer">
+        <img class="open-tale-intro-img" src="assets/imgs/games/z-survival/intro-tale/intro_0.jpg">
+      </div>
+    </div>
+    <div class="start-menu-group">
+      <div class="start-menu-btn">
+        <button class="btn btn-default z-survival-btn" (click)="confirmNewGame()">NEW GAME</button>
+      </div>
+      <div class="start-menu-btn">
+        <button class="btn btn-default z-survival-btn" [disabled]="!_userStatusS.isFirstTime">CONTINUE</button>
+      </div>
+    </div>
+    <app-z-confirm-panel
+      *ngIf="!_userStatusS.isFirstTime && confirmNewGamePanel"
+      [data]="confirmPanel"
+      (onResult)="onResult($event)">
+    </app-z-confirm-panel>
+  </div>
+</div>

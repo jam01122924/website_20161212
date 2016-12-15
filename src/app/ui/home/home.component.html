@@ -1,16 +1,158 @@
-<div>
-  <button (click)="getUserData()">getData Test</button>
-  <div>
-    <ul>
-      <li *ngFor="let item of dataResult">
-        {{item.id}} {{item.username}} {{item.is_staff?'Staff':'NonStaff'}}
-        <p>Character:</p>
-        <ul>
-          <li *ngFor="let character of item.characters">{{character.id}} {{character.name}} {{character.sex}} {{character.created}}</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+<div class="home-container">
+	<img src="assets/imgs/selfie/paper_edge.png" width="100%" *ngIf="w>=720">
+	<div class="home-white-space-container">
+		<div class="home-white-space">
+			<div class="left home-me-text">
+				<h1><span style="color: #DEDEDE">James </span><span style="color: orange">Le</span></h1>
+				<div class="text-line">AnuglarJS|2 jQuery JavaScript TypeScript HTML5 CSS Less Sass Nodejs Express MongoDB Git React Agile Scrum Gulp Karma Protractor C++ Java ASP PHP UX_Design PS </div>
+				<h3>An adventurer on his way</h3>
+				<span class="white-space-link">
+					Trip
+				</span>
+			</div>
+			<img class="right home-me-img" src="assets/imgs/me001.png">
+      <div class="clear-float"></div>
+		</div>
+	</div>
+	<img src="assets/imgs/selfie/paper_edge_down.png" width="100%" *ngIf="w>=720">
+
+	<div class="home-main-content">
+		<div [ngClass]="{'home-main-content-lg': w>=720, 'home-main-content-md': w<720&&w>=400, 'home-main-content-sm': w<400}">
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/angular-blueprint.gif" width="90%">
+				<p class="title">
+					<img src="assets/imgs/angularjs.png" width="10%">
+					AngularJS
+				</p>
+				<p>
+					Years of experience working with <strong>AngularJS</strong><br />
+					Deep understanding of this <strong>MVWhatever</strong> Framework<br />
+					Good at unit test with <strong>Karma</strong> and e2e test with <strong>Protractor</strong>
+				</p>
+				<p class="title">
+					<img src="assets/imgs/angular2.png" width="10%">
+					Angular 2
+				</p>
+				<p>
+					Jumped to Angular 2 since beta version at 2015/12<br/>
+					Developed this website with <strong>Angular 2</strong>
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/jquery-blueprint.png" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/jquery.png" width="10%">
+					jQuery
+				</p>
+				<p>
+					jQuery is like a Secondary Weapon<br />Very <strong>handy</strong> and <strong>reliable</strong> when needed<br />
+					Has been using jQuery since <strong>2012</strong><br />
+					It always feel good to do things in a <strong>Straight</strong> and <strong>Old Fashion</strong> way!
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/js-blueprint.jpg" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/js.png" width="10%">
+					JavaScript
+				</p>
+				<p>
+					This guy is a <strong>Veteran</strong> in JavaScript<br />
+					Has been using JavaScript since <strong>2005</strong><br />
+					Expert in <strong>ECMAScript 5</strong> and well self-educated in <strong>ECMAScript 6</strong>
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/ts-blueprint.jpg" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/ts.png" width="10%">
+					TypeScript
+				</p>
+				<p>
+					Relatively New to TypeScript, but <strong>Loved it</strong> already<br />
+					Has been using TypeScript since <strong>2015</strong><br />
+					Developed this website with <strong>TypeScript</strong>
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/html5-blueprint.jpg" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/html5.png" width="10%">
+					HTML5
+				</p>
+				<p>
+					Well, there is a <br/>
+					long...<br />
+					long...<br />
+					long...story<br />
+					about this guy and HTML<br />
+					But long story short<br />
+					he uses HTML5 <strong>A LOT</strong><br />
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/css-blueprint.png" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/css.png" width="10%">
+					CSS/LESS/SASS
+				</p>
+				<p>
+					<strong>Expert</strong> in CSS and LESS<br/>
+					<strong>New</strong> to SASS<br/>
+					Developed this website with <strong>SASS</strong>
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/git-blueprint.gif" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/git.png" width="10%">
+					Git
+				</p>
+				<p>
+					<strong>Good</strong> with Git and version control<br/>
+					Experience of using git in a <br />
+					<strong>Large Scale</strong> Project<br />
+					in a <strong>Big</strong> team<br />
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/agile-blueprint.jpg" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/agile.png" width="10%">
+					Agile
+				</p>
+				<p>
+					Comfortable in An <strong>Agile Environment</strong><br/>
+					With fast development circle<br />
+					Capable of working alone<br/>
+					With given target and resource<br />
+					Or working as a team member<br />
+					Plan <strong>-</strong> Design <strong>-</strong> Develop <strong>-</strong> Review <strong>-</strong> Test
+				</p>
+			</div>
+
+			<div class="spec-content" [ngClass]="{'spec-content-lg': w>=760}">
+				<img src="assets/imgs/responsive-blueprint.jpg" width="90%" style="background-color: #E0E0E0">
+				<p class="title">
+					<img src="assets/imgs/responsive.png" width="10%">
+					Responsive Web Design
+				</p>
+				<p>
+					Familiar with <strong>Responsive Web Design</strong><br />
+					Years of <strong>color</strong> and <strong>Web Design</strong> experience<br />
+					<strong>Play</strong> with this website to see the effect
+				</p>
+			</div>
+
+		</div>
+	</div>
 
   <div>
     <app-login></app-login>

@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "id": "talent_001",
+      "name": "Big Guy",
+      "description": "You are strong and slow.",
+      "effectDes": ["Add 2 additional Strength", "-5% Dodge Rate", "-5% Hit Rate"],
+      "effects": [
+        { "key":"str", "value": 2 },
+        { "key":"dodge_rate_timer", "value": -0.05 },
+        { "key":"hit_rate_timer", "value": -0.05 }
+      ]
+    },
+    {
+      "id": "talent_002",
+      "name": "Shoot Champion",
+      "description": "You are well trained in shooting. But you are very weak in close combat",
+      "effectDes": ["Add 2 additional Perception", "-20% Melee Damage"],
+      "effects": [
+        { "key":"pec", "value": 2 },
+        { "key":"melee_dmg_timer", "value": -0.2 }
+      ]
+    },
+    {
+      "id": "talent_003",
+      "name": "Robot Arm",
+      "description": "You have a robot arm installed as your left hand. It may not work as good as the old one you have, but it never get tired.",
+      "effectDes": ["Add 2 additional Endurance", "-5% Hit Rate", "-5% Critical Hit Chance"],
+      "effects": [
+        { "key":"end", "value": 2 },
+        { "key":"hit_rate_timer", "value": -0.05 },
+        { "key":"crt_rate_timer", "value": -0.05 }
+      ]
+    },
+    {
+      "id": "talent_004",
+      "name": "Innocent",
+      "description": "You believe it is a wonderful world with rainbows and everything, even after what you have been through.",
+      "effectDes": ["Add 2 additional Charisma", "-5% Overall Damage"],
+      "effects": [
+        { "key":"cha", "value": 2 },
+        { "key":"melee_dmg_timer", "value": -0.05 },
+        { "key":"range_dmg_timer", "value": -0.05 },
+        { "key":"energy_dmg_timer", "value": -0.05 }
+      ]
+    },
+    {
+      "id": "talent_005",
+      "name": "Nerd",
+      "description": "You can communicate with stuffs like books and computers way better than with people.",
+      "effectDes": ["Add 2 additional Intelligence", "-10% Chance of Persuade NPC"],
+      "effects": [
+        { "key":"int", "value": 2 },
+        { "key":"persuade_rate_timer", "value": -0.1 }
+      ]
+    },
+    {
+      "id": "talent_006",
+      "name": "Cat Like",
+      "description": "You act fast like a cat. However, you cannot carry as much weight as others",
+      "effectDes": ["Add 2 additional Agility", "-10% Max Carry Weight"],
+      "effects": [
+        { "key":"agi", "value": 2 },
+        { "key":"max_weight_timer", "value": -0.1 }
+      ]
+    },
+    {
+      "id": "talent_007",
+      "name": "Lucky Star",
+      "description": "Fortune smiles on you.",
+      "effectDes": ["Add 2 additional Luck", "get 20% less Exp"],
+      "effects": [
+        { "key":"str", "value": 2 },
+        { "key":"exp_timer", "value": -0.2 }
+      ]
+    },
+    {
+      "id": "talent_008",
+      "name": "Golden Finger",
+      "description": "Warning: This is a cheat package. Only for those who's too weak to survive out there.",
+      "effectDes": ["Add 2 to ALL basic status"],
+      "effects": [
+        { "key":"str", "value": 2 },
+        { "key":"pec", "value": 2 },
+        { "key":"end", "value": 2 },
+        { "key":"cha", "value": 2 },
+        { "key":"int", "value": 2 },
+        { "key":"agi", "value": 2 },
+        { "key":"luc", "value": 2 }
+      ]
+    }
+  ]
+}

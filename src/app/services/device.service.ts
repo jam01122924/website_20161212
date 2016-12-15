@@ -4,8 +4,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class DeviceService {
-  width$: Observable<number>;
-  height$: Observable<number>;
+  width$: Observable<any>;
+  height$: Observable<any>;
 
   constructor() {
     let windowSize$ = new BehaviorSubject(getWindowSize());

@@ -1,0 +1,12 @@
+<div class="head-user-status-container">
+  <div class="head-user-status-content">
+    <div *ngIf="!authS.loggedIn">
+      <a [routerLink]="'login'">
+        Login
+      </a>
+    </div>
+    <div *ngIf="authS.loggedIn" class="user">
+      <a [routerLink]="'userAccount'"><i class="fa fa-user-circle" aria-hidden="true"></i> {{authS.currentUser?authS.currentUser.username:''}}</a>
+    </div>
+  </div>
+</div>

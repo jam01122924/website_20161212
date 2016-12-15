@@ -1,0 +1,19 @@
+<div class="open-tale-container">
+  <div class="open-tale-content">
+    <div class="open-tale-intro" *ngIf="!openTaleFinish" (click)="continue()">
+      <div class="open-tale-intro-img-container">
+        <div class="open-tale-intro-img-relative-layer">
+          <img class="open-tale-intro-img" src="assets/imgs/games/z-survival/intro-tale/{{_currImg?_currImg:'intro_0'}}.jpg">
+        </div>
+      </div>
+      <div *ngIf="_currImg">
+        <div class="open-tale-intro-text">
+          {{_currText}}
+        </div>
+        <div class="open-tale-intro-continue-container">
+          click to continue...
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

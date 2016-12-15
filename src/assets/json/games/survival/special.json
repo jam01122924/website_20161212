@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "name": "Strength",
+      "affect": [
+        "Heavy Melee Attack Damage",
+        "Max Carry Weight",
+        "Chance to break a lock"
+      ]
+    },
+    {
+      "name": "Perception",
+      "affect": [
+        "Hit Rate",
+        "Range Attack Damage",
+        "Chance to craft items"
+      ]
+    },
+    {
+      "name": "Endurance",
+      "affect": [
+        "Health",
+        "Stamina",
+        "Chance to resist negative status"
+      ]
+    },
+    {
+      "name": "Charisma",
+      "affect": [
+        "Buy/Sale rate",
+        "Fame",
+        "Chance to persuade NPC"
+      ]
+    },
+    {
+      "name": "Intelligence",
+      "affect": [
+        "Skill Points",
+        "High Tech Weapon Damage",
+        "Chance to get extra Exp"
+      ]
+    },
+    {
+      "name": "Agility",
+      "affect": [
+        "Action Speed",
+        "Light Melee Attack Damage",
+        "Chance to dodge an attack"
+      ]
+    },
+    {
+      "name": "Luck",
+      "affect": [
+        "Critical Damage",
+        "Critical Chance",
+        "Chance to find better items"
+      ]
+    }
+  ]
+}

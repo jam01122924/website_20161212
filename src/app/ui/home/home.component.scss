@@ -1,0 +1,199 @@
+@import '../../../font';
+@import '../../../color';
+
+.home-container {
+    padding-top: 1vw;
+	width: 100%;
+	text-align: center;
+	display: block;
+	.app-selfie {
+		text-align: center;
+	}
+	.home-section-container {
+    position:relative;
+    z-index:3;
+    height:500px;
+    width:100%;
+    background-attachment:fixed;    /* this keeps the background in place */
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+	}
+	.home-section-content {
+    position:relative;
+    z-index:4;
+    background-color:#fff;
+    border:2px solid #666;
+    height:10%;    /* this height difference allows the bg to show through */
+	}
+    .home-white-space-container {
+        background-image: url('assets/imgs/street.jpg');
+        background-size: 200% 100%;
+        background-repeat: no-repeat;
+        margin-top: -2px;
+        .home-white-space {
+            background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(85,85,85,1) 12%, rgba(0,0,0,0.81) 18%, rgba(0,0,0,0.2) 37%, rgba(0,0,0,0.2) 68%, rgba(0,0,0,0.77) 83%, rgba(90,90,90,1) 89%, rgba(255,255,255,1) 100%);
+            background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(85,85,85,1) 12%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.2) 37%,rgba(0,0,0,0.2) 68%,rgba(0,0,0,0.77) 83%,rgba(90,90,90,1) 89%,rgba(255,255,255,1) 100%);
+            background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(85,85,85,1) 12%,rgba(0,0,0,0.81) 18%,rgba(0,0,0,0.2) 37%,rgba(0,0,0,0.2) 68%,rgba(0,0,0,0.77) 83%,rgba(90,90,90,1) 89%,rgba(255,255,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+            height: auto;
+
+
+            .home-me-img {
+                width: 50%;
+            }
+            .home-me-text {
+                padding: 17% 0 10% 5%;
+                color: $color-gray75;
+                font-family: pencil01;
+                width: 50%;
+                position: relative;
+                top: 0;
+                text-align: center;
+                h1 {
+                    font-size: 10vw;
+                    margin-bottom: 0;
+                }
+                h2 {
+                    margin-top: 10px;
+                    font-size: 6vw;
+                }
+                h3 {
+                    margin: 5px 0 0 0;
+                    font-size: 3vw;
+                }
+                .text-line {
+                    padding: 0 2px 0 2px;
+                    font-size: 0.8vw;
+                    color: $color-gray85;
+                    background: $color-gray15;
+                    border: 1px solid $color-gray15;
+                    width: 90%;
+                    display: inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+    .home-main-content {
+        color: $color-gray65;
+        text-align: center;
+        img {
+            border: 4px solid $color-gray85;
+        }
+        .title {
+            img {
+                border: none;
+            }
+            font-family: pencil02;
+            color: $color-gray95;
+        }
+        strong {
+            color: orange;
+        }
+        .home-main-content-lg {
+            margin-top: 23px;
+            .title {
+                font-size: 40px;
+                padding-bottom: 9px;
+                border-bottom: 4px solid $color-gray35;
+                margin: 15px;
+            }
+            p {
+                font-size: 16px;
+            }
+            .spec-content {
+                height: 680px;
+                display: inline-block;
+                width: 100%;
+                margin: 4vw 1vw 4vw 1vw;
+                vertical-align: top;
+            }
+            .spec-content-lg {
+                max-width: 360px;
+            }
+
+        }
+        .home-main-content-md {
+            margin-top: 15px;
+            .title {
+                font-size: 5vw;
+                padding-bottom: 5px;
+                border-bottom: 2px solid $color-gray35;
+                margin: 10px;
+            }
+            p {
+                font-size: 2vw;
+            }
+            .spec-content {
+                display: inline-block;
+                width: 80%;
+                margin: 4vw 0 4vw 0;
+            }
+        }
+        .home-main-content-sm {
+            margin-top: 10px;
+            .title {
+                font-size: 15px;
+                padding-bottom: 3px;
+                border-bottom: 1px solid $color-gray35;
+                margin: 5px;
+            }
+            p {
+                font-size: 10px;
+            }
+            .spec-content {
+                display: inline-block;
+                width: 100%;
+                margin: 4vw 0 4vw 0;
+            }
+
+        }
+        .spec-content {
+            padding: 10vw 2vw 10vw 2vw;
+            background-color: rgba(255,255,255,0.1);
+        }
+    }
+
+}
+.white-space-link {
+    font-size: 6vw;
+    cursor: pointer;
+}
+.white-space-link:hover {
+    color: orange;
+}
+
+.section {
+    position:relative;
+    z-index:1;
+    height:500px;
+    width:100%;
+    background-attachment:fixed;    /* this keeps the background in place */
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+.content {
+    position:relative;
+    z-index:2;
+    background-color:#fff;
+    border:2px solid #666;
+    height:50%;    /* this height difference allows the bg to show through */
+}
+.section#s1 {
+    background-image: url(http://farm4.staticflickr.com/3290/3090990005_1177611ccb_o.jpg);
+}
+.section#s2 {
+    background-image: url(http://farm5.staticflickr.com/4135/4820238049_8e830ec494_b.jpg);
+}
+.section#s3 {
+    background-image: url(http://farm5.staticflickr.com/4015/4589449172_eb046a7f2a_b.jpg);
+}
+.section#s4 {
+    background-image: url(http://farm9.staticflickr.com/8109/8623081923_9cffafc4a7_h.jpg);
+}
+.section#s5 {
+    background-image: url(http://farm4.staticflickr.com/3073/3090985991_8d4b559d29_o.jpg);
+}
+

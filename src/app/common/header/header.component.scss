@@ -12,13 +12,14 @@
   border-bottom: double 2px $color-gray85;
 	.main-header-expend-btn {
 		cursor: pointer;
+    margin-right: 10px;
 	}
 	.main-header-expend-btn:hover {
 		color: #FDE357;
 	}
 	.main-header-logo-sm {
 		width: 100%;
-		text-align: center;
+		text-align: left;
 		display: block;
 		padding: 2px;
 		position: fixed;
