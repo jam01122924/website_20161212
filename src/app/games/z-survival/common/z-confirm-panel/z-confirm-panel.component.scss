@@ -1,4 +1,5 @@
 @import "../../../../../color";
+@import "../../../../../animate";
 
 .z-confirm-panel-container {
   position: fixed;
@@ -17,17 +18,20 @@
     background-color: $color-green10;
     border-radius: 5px;
 		/* Set our transitions up. */
-		-webkit-transition: max-height 0.8s;
-		-moz-transition: max-height 0.8s;
-		transition: max-height 0.8s;
-    animation-name: animation-fadeTopIn;
-    animation-duration: 1.2s;
-    -webkit-animation-name: animation-fadeTopIn; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 1.2s; /* Chrome, Safari, Opera */
+		-webkit-transition: opacity 0.8s;
+		-moz-transition: opacity 0.8s;
+		-ms-transition: opacity 0.8s;
+		-o-transition: opacity 0.8s;
+		transition: opacity 0.8s;
+    -webkit-animation: animation-fadeUpIn 0.8s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: animation-fadeUpIn 0.8s; /* Firefox < 16 */
+    -ms-animation: animation-fadeUpIn 0.8s; /* Internet Explorer */
+    -o-animation: animation-fadeUpIn 0.8s; /* Opera < 12.1 */
+    animation: animation-fadeUpIn 0.8s;
     .z-confirm-panel-head {
       border-bottom: 1px solid $color-green40;
       padding: 8px;
-      background-color: $color-green90;
+      background-color: $color-green10;
       border-radius: 5px 5px 0 0;
     }
     .z-confirm-panel-body {

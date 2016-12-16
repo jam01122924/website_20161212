@@ -1,0 +1,38 @@
+@import '../../../../../color';
+.character-create-container {
+  .character-create-content {
+    height: 100vh;
+    .selectedBG {
+      background-color: $color-gray30;
+      color: $color-green60;
+    }
+  }
+  .character-create-sections {
+    position: relative;
+    padding: 5vh 5% 0 5%;
+    .character-create-panel {
+      height: 75vh;
+      overflow: auto;
+      .character-create-item-container {
+        padding: 2vh 0;
+        .gender-icon {
+          font-size: 12vh;
+        }
+      }
+    }
+    .job-name-bar {
+      margin: auto;
+      text-align: center;
+      .job-name-container {
+        display: inline-block;
+        min-width: 140px;
+      }
+    }
+  }
+  .bottom-btn-container {
+    width: 90%;
+    height: 15vh;
+    position: relative;
+    margin: 0 5%;
+  }
+}

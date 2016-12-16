@@ -12,7 +12,35 @@
   display: table;
   clear: both;
 }
-
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.align-right {
+  text-align: right;
+}
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 .vertical-center {
   position: relative;
   top: 50%;
@@ -64,8 +92,8 @@
   border-radius: 3px;
 }
 
+// Z-survival Style:
 .z-survival-btn {
-  min-width: 80px !important;
   margin: 10px auto !important;
   font-size: 16px !important;
   font-weight: bolder !important;
@@ -76,4 +104,34 @@
 .z-survival-btn:hover {
   background-color: $color-green20 !important;
   color: $color-gray70 !important;
+}
+.z-canvas-container {
+  width: 100vw;
+  height:100vh;
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  overflow: hidden;
+  margin: auto;
+}
+.z-panel {
+  background-color: $color-black-trans90 !important;
+  border-color: $color-green40 !important;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  .z-panel-heading {
+    border-bottom: 1px solid $color-green40;
+    background-color: $color-green10;
+  }
+}
+.z-input {
+  background-color: $color-green10 !important;
+  border: 1px solid $color-green40 !important;
+  color: $color-green40 !important;
+}
+.z-input:focus {
+  color: $color-green60 !important;
+  border: 1px solid $color-green60 !important;
 }

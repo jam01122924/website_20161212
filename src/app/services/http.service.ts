@@ -51,6 +51,9 @@ export class HttpService {
 
   setHeader(param?: any): RequestOptions {
     let headers = new Headers({ 'Content-Type': param && param.contentType ? param.contentType : 'application/json' });
+    param = param?param:{
+      token: this.tokenS.token
+    };
     if(param && param.token){
       headers.append('Authorization', 'JWT ' + param.token);
     }

@@ -1,9 +1,10 @@
 @import '../../../../../color';
 .open-tale-intro-img-container {
   width: 100vw;
-  position: fixed;
-  left: 0px;
   height:100vh;
+  left: 0px;
+  top: 0px;
+  position: fixed;
   overflow: hidden;
   .open-tale-intro-img-relative-layer {
     width: 100vw;
@@ -15,6 +16,12 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      /* Set our transitions up. */
+      -webkit-animation: animation-fadeIn 1.6s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: animation-fadeIn 1.6s; /* Firefox < 16 */
+      -ms-animation: animation-fadeIn 1.6s; /* Internet Explorer */
+      -o-animation: animation-fadeIn 1.6s; /* Opera < 12.1 */
+      animation: animation-fadeIn 1.6s;
     }
   }
 }

@@ -1,5 +1,79 @@
-<div class="character-create-container">
+<div class="character-create-container container">
   <div class="character-create-content">
+    <div class="character-create-sections">
 
+      <div *ngIf="_step===_steps['sex']">
+        <div class="panel z-panel character-create-panel">
+          <div class="panel-heading z-panel-heading">Select Sex</div>
+          <div class="panel-body">
+            <div class="character-create-item-container align-center">
+              <label>Name: </label><input type="text" class="form-control z-input" placeholder="Character Name" [(ngModel)]="_character.name">
+            </div>
+            <div class="character-create-item-container align-center">
+              <label>Gender: </label>
+              <div class="row">
+                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='male'" [ngClass]="{selectedBG: _character.sex==='male'}">
+                  <i class="fa fa-mars" aria-hidden="true"></i>
+                </div>
+                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='female'" [ngClass]="{selectedBG: _character.sex==='female'}">
+                  <i class="fa fa-venus" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="_step===_steps['job']">
+        <div class="panel z-panel character-create-panel">
+          <div class="panel-heading z-panel-heading">Select Sex</div>
+          <div class="panel-body">
+            <div class="job-name-bar">
+              <button class="btn btn-default z-survival-btn" (click)="jobPrevious()">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+              </button>
+              <span class="job-name-container">{{_character.oldJob.name}}</span>
+              <button class="btn btn-default z-survival-btn" (click)="jobNext()">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </button>
+            </div>
+            {{_oldjobs}}
+          </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="_step===_steps['talent']">
+        talent
+      </div>
+
+
+      <div *ngIf="_step===_steps['Attributes']">
+        Attributes
+      </div>
+
+
+      <div *ngIf="_step===_steps['skills']">
+        skills
+      </div>
+
+
+      <div *ngIf="_step===_steps['confirm']">
+        confirm
+      </div>
+
+    </div>
+    <div class="bottom-btn-container container">
+      <button class="btn btn-default z-survival-btn bottom-left" *ngIf="_step!==_steps['sex']" (click)="previous()">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+      </button>
+      <button class="btn btn-default z-survival-btn bottom-right" *ngIf="_step!==_steps['confirm']" (click)="next()">
+        <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
+      </button>
+      <button class="btn btn-default z-survival-btn bottom-right" *ngIf="_step===_steps['confirm']" (click)="confirm()">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Create
+      </button>
+    </div>
   </div>
 </div>
