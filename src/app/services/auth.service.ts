@@ -48,11 +48,7 @@ export class AuthService {
   }
 
   getUserData() {
-    let param = {
-      token: this.tokenS.token
-    };
-
-    return this.httpS.get(this.valueS.url.users, param);
+    return this.httpS.get(this.valueS.url.users);
 
     // let headers = new Headers;
     // headers.append('Authorization', 'JWT ' + this.user_token);
@@ -61,12 +57,8 @@ export class AuthService {
   }
 
   getUserDetailData(id?:string) {
-    let param = {
-      token: this.tokenS.token
-    };
-    console.log(this.valueS.url.users);
     let userId = id?id:this.currentUser?this.currentUser.id:'';
     console.log(userId);
-    return this.httpS.get(this.valueS.url.users + userId + '/', param);
+    return this.httpS.get(this.valueS.url.users + userId + '/');
   }
 }

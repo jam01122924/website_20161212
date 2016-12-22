@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import {Http, Response, Headers, RequestOptions, URLSearchParams} from '@angular/http';
 import { Observable } from 'rxjs/Rx'
 
 // Import RxJs required methods
@@ -16,7 +16,7 @@ export class HttpService {
   }
 
   get(url: string, param?: any): Observable<any> {
-    let options = this.setHeader(param);
+    let options = this.setRequestOptions(param);
     return this.http.get(this._url + url, options)
       .map((res: Response) => res.json())
       .catch((error: any) => this.handleError(error))
@@ -24,14 +24,14 @@ export class HttpService {
 
   post(url: string, body: any, param?: any): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let options = this.setHeader(param);
+    let options = this.setRequestOptions(param);
     return this.http.post(this._url + url, bodyString, options)
       .map((res:Response) => res.json())
       .catch((error: any) => this.handleError(error))
   }
   put(url: string, body: any): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let options = this.setHeader();
+    let options = this.setRequestOptions();
     return this.http.put(this._url + url, bodyString, options)
       .map((res:Response) => res.json())
       .catch((error: any) => this.handleError(error))
@@ -43,21 +43,37 @@ export class HttpService {
   }
   patch(url: string, body: any): Observable<any> {
     let bodyString = JSON.stringify(body);
-    let options = this.setHeader();
+    let options = this.setRequestOptions();
     return this.http.patch(this._url + url, bodyString, options)
       .map((res:Response) => res.json())
       .catch((error: any) => this.handleError(error))
   }
 
-  setHeader(param?: any): RequestOptions {
-    let headers = new Headers({ 'Content-Type': param && param.contentType ? param.contentType : 'application/json' });
-    param = param?param:{
-      token: this.tokenS.token
-    };
-    if(param && param.token){
-      headers.append('Authorization', 'JWT ' + param.token);
+  setRequestOptions(param?: any): RequestOptions {
+    // let headers = new Headers({ 'Content-Type': param && param.contentType ? param.contentType : 'application/json' });
+
+    // param = param?param:{
+    //   token: this.tokenS.token
+    // };
+    // if(param && param.token){
+    //   headers.append('Authorization', 'JWT ' + param.token);
+    // }
+    let headers = new Headers();
+    let search = new URLSearchParams();
+    headers.append('Content-Type', 'application/json');
+    if(this.tokenS.token){
+      console.log(this.tokenS.token);
+      headers.append('Authorization', 'JWT ' + this.tokenS.token);
     }
-    return new RequestOptions({ headers: headers });
+    if(param){
+      for(var key in param) {
+        search.append(key, param[key]);
+      }
+    }
+    return new RequestOptions({
+      headers: headers,
+      search: search
+    });
   }
 
   handleError(error) {

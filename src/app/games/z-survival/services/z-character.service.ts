@@ -11,4 +11,8 @@ export class ZCharacterService {
   getOldJob() {
     return this.httpS.get(this.valueS.url.oldJob);
   }
+
+  getSkill(param?:any) {
+    return this.httpS.get(this.valueS.url.skill, param);
+  }
 }

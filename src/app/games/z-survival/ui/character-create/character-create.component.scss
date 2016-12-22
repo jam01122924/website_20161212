@@ -3,7 +3,7 @@
   .character-create-content {
     height: 100vh;
     .selectedBG {
-      background-color: $color-gray30;
+      background-color: $color-gray20;
       color: $color-green60;
     }
   }
@@ -13,6 +13,8 @@
     .character-create-panel {
       height: 75vh;
       overflow: auto;
+      text-align: center;
+      min-width: 261px;
       .character-create-item-container {
         padding: 2vh 0;
         .gender-icon {
@@ -20,6 +22,8 @@
         }
       }
     }
+
+    // Old Job
     .job-name-bar {
       margin: auto;
       text-align: center;
@@ -28,11 +32,73 @@
         min-width: 140px;
       }
     }
+    .job-description-container {
+      max-width: 720px;
+      margin: auto;
+      text-align: left;
+    }
+    .job-attr-container {
+      margin: 10px auto auto auto;
+      padding: 15px;
+      border: 1px solid $color-green40;
+      max-width: 720px;
+      .attr-table {
+        margin: auto;
+        text-align: left;
+        width: 100%;
+        .job-attr-number {
+          display: inline-block;
+          min-width: 27px;
+          text-align: center;
+        }
+      }
+    }
+
+    // Skils:
+    .skills-container {
+      .skills-content {
+        border: 1px solid $color-green40;
+        border-radius: 3px;
+        padding: 10px;
+        margin: 10px 0;
+        cursor: pointer;
+        .skill-name {
+          margin-bottom: 10px;
+          font-size: 1.2em;
+          font-weight: bold;
+          color: $color-green50;
+        }
+      }
+      .selected-skill {
+        color: $color-green60;
+        border: 1px solid $color-green60;
+        background-color: $color-green-trans20;
+      }
+    }
+
+    // confirm:
+    .confirm-list {
+      margin: 10px 0;
+      text-align: center;
+      .confirm-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .confirm-content {
+        min-height: 20px;
+        margin: 5px 0;
+      }
+      .confirm-error {
+        color: $color-danger;
+      }
+    }
+
   }
   .bottom-btn-container {
     width: 90%;
     height: 15vh;
     position: relative;
-    margin: 0 5%;
+    margin: -10px 5% 0 5%;
   }
 }

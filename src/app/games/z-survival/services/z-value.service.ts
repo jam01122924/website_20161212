@@ -14,7 +14,8 @@ export class ZValueService {
       character: 'character/character/',
       attributes: 'character/attributes/',
       oldJob: 'character/oldjob/',
-      talent: 'character/talent/'
+      talent: 'character/talent/',
+      skill: 'character/skill/'
     };
   }
 
