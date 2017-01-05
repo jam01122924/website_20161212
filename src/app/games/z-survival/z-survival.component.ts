@@ -10,7 +10,7 @@ import { ZValueService } from './services/z-value.service';
   selector: 'app-z-survival',
   templateUrl: 'z-survival.component.html',
   styleUrls: ['z-survival.component.scss'],
-  providers: [ZGameStateService, UserStatusService, ZCharacterService, ZValueService]
+  providers: [ZGameStateService, UserStatusService, ZCharacterService, ZValueService],
 })
 export class ZSurvivalComponent implements OnInit {
   private zSurvival_GameState = ZSurvival_GameState;

@@ -12,10 +12,10 @@
             <div class="character-create-item-container align-center">
               <label>Gender: </label>
               <div class="row">
-                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='male'" [ngClass]="{selectedBG: _character.sex==='male'}">
+                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='M'" [ngClass]="{selectedBG: _character.sex==='M'}">
                   <i class="fa fa-mars" aria-hidden="true"></i>
                 </div>
-                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='female'" [ngClass]="{selectedBG: _character.sex==='female'}">
+                <div class="col-xs-6 align-center gender-icon" (click)="_character.sex='F'" [ngClass]="{selectedBG: _character.sex==='F'}">
                   <i class="fa fa-venus" aria-hidden="true"></i>
                 </div>
               </div>
@@ -57,15 +57,15 @@
                   <td>Strength</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.strength < _character.oldJob.attributes.strength || _character.attributes.strength === 1"
+                            [disabled]="_character.attr.strength < _character.oldJob.attributes.strength || _character.attr.strength === 1"
                             (click)="changeAttr('strength', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.strength}}
+                      {{_character.attr.strength}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.strength >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.strength >= 10 || _attrPoint===0"
                             (click)="changeAttr('strength', 1)">
                       +
                     </button>
@@ -75,15 +75,15 @@
                   <td>Perception</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.perception < _character.oldJob.attributes.perception || _character.attributes.perception === 1"
+                            [disabled]="_character.attr.perception < _character.oldJob.attributes.perception || _character.attr.perception === 1"
                             (click)="changeAttr('perception', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.perception}}
+                      {{_character.attr.perception}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.perception >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.perception >= 10 || _attrPoint===0"
                             (click)="changeAttr('perception', 1)">
                       +
                     </button>
@@ -93,15 +93,15 @@
                   <td>Endurance</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.endurance < _character.oldJob.attributes.endurance || _character.attributes.endurance === 1"
+                            [disabled]="_character.attr.endurance < _character.oldJob.attributes.endurance || _character.attr.endurance === 1"
                             (click)="changeAttr('endurance', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.endurance}}
+                      {{_character.attr.endurance}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.endurance >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.endurance >= 10 || _attrPoint===0"
                             (click)="changeAttr('endurance', 1)">
                       +
                     </button>
@@ -111,15 +111,15 @@
                   <td>Charisma</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.charisma < _character.oldJob.attributes.charisma || _character.attributes.charisma === 1"
+                            [disabled]="_character.attr.charisma < _character.oldJob.attributes.charisma || _character.attr.charisma === 1"
                             (click)="changeAttr('charisma', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.charisma}}
+                      {{_character.attr.charisma}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.charisma >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.charisma >= 10 || _attrPoint===0"
                             (click)="changeAttr('charisma', 1)">
                       +
                     </button>
@@ -129,15 +129,15 @@
                   <td>Intelligence</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.intelligence < _character.oldJob.attributes.intelligence || _character.attributes.intelligence === 1"
+                            [disabled]="_character.attr.intelligence < _character.oldJob.attributes.intelligence || _character.attr.intelligence === 1"
                             (click)="changeAttr('intelligence', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.intelligence}}
+                      {{_character.attr.intelligence}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.intelligence >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.intelligence >= 10 || _attrPoint===0"
                             (click)="changeAttr('intelligence', 1)">
                       +
                     </button>
@@ -147,15 +147,15 @@
                   <td>Agility</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.agility < _character.oldJob.attributes.agility || _character.attributes.agility === 1"
+                            [disabled]="_character.attr.agility < _character.oldJob.attributes.agility || _character.attr.agility === 1"
                             (click)="changeAttr('agility', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.agility}}
+                      {{_character.attr.agility}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.agility >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.agility >= 10 || _attrPoint===0"
                             (click)="changeAttr('agility', 1)">
                       +
                     </button>
@@ -165,15 +165,15 @@
                   <td>Luck</td>
                   <td class="text-right">
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.luck < _character.oldJob.attributes.luck || _character.attributes.luck === 1"
+                            [disabled]="_character.attr.luck < _character.oldJob.attributes.luck || _character.attr.luck === 1"
                             (click)="changeAttr('luck', -1)">
                       -
                     </button>
                     <div class="job-attr-number">
-                      {{_character.attributes.luck}}
+                      {{_character.attr.luck}}
                     </div>
                     <button class="btn btn-default z-survival-btn"
-                            [disabled]="_character.attributes.luck >= 10 || _attrPoint===0"
+                            [disabled]="_character.attr.luck >= 10 || _attrPoint===0"
                             (click)="changeAttr('luck', 1)">
                       +
                     </button>
@@ -216,7 +216,15 @@
               <div class="confirm-title">Job:</div>
               <div class="confirm-content">{{_character.oldJob.name}}</div>
               <div class="confirm-title">Attributes:</div>
-              <div class="confirm-content">{{_character.attributes}}</div>
+              <div class="confirm-content text-center">
+                <div *ngFor="let attr of _character.attr | attrArray">
+                  <progressbar [max]="_attrMax" [value]="attr.value" type="{{attr.value>6?'success':attr.value>3?'warning':'danger'}}">
+                    <span style="color:black; white-space:nowrap; padding-left: 10px;">
+                      {{attr.key}}: {{attr.value}} / {{_attrMax}}
+                    </span>
+                  </progressbar>
+                </div>
+              </div>
               <div class="confirm-error" *ngIf="confirmInfo.attrError">{{confirmInfo.attrError}}</div>
               <div class="confirm-title">Skills:</div>
               <div class="confirm-content">
@@ -229,6 +237,16 @@
               <div class="confirm-error" *ngIf="confirmInfo.skillError">{{confirmInfo.skillError}}</div>
             </div>
           </div>
+        </div>
+      </div>
+
+
+      <div *ngIf="_step===_steps['error']">
+        {{_result}}
+      </div>
+
+      <div *ngIf="_step===_steps['success']">
+        {{_successInfo}}
       </div>
 
     </div>
@@ -236,7 +254,7 @@
       <button class="btn btn-default z-survival-btn bottom-left" *ngIf="_step!==_steps['sex']" (click)="previous()">
         <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
       </button>
-      <button class="btn btn-default z-survival-btn bottom-right" *ngIf="_step!==_steps['confirm']" (click)="next()">
+      <button class="btn btn-default z-survival-btn bottom-right" *ngIf="_step!==_steps['confirm'] && _step!==_steps['result'] " (click)="next()">
         <i class="fa fa-arrow-right" aria-hidden="true"></i> Next
       </button>
       <button class="btn btn-default z-survival-btn bottom-right" *ngIf="_step===_steps['confirm']" (click)="confirm()">

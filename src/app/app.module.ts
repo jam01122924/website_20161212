@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AlertModule, CarouselModule, AccordionModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule, CarouselModule, AccordionModule, DropdownModule, ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './common/login/login.component';
@@ -35,6 +35,8 @@ import { OpenTaleComponent } from './games/z-survival/ui/open-tale/open-tale.com
 import { CharacterCreateComponent } from './games/z-survival/ui/character-create/character-create.component';
 import { StartMenuComponent } from './games/z-survival/ui/start-menu/start-menu.component';
 import { ZConfirmPanelComponent } from './games/z-survival/common/z-confirm-panel/z-confirm-panel.component';
+
+import { MainPipe } from './games/z-survival/common/directives/pipe/main.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -89,11 +91,13 @@ const appRoutes: Routes = [
     CarouselModule,
     AccordionModule,
     DropdownModule,
+    ProgressbarModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MainPipe
   ],
   providers: [HttpService, AuthService, ValueService, TokenService, CookieService, DeviceService, MenuService],
   bootstrap: [AppComponent]
