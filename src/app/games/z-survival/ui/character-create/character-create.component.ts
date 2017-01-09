@@ -127,6 +127,12 @@ export class CharacterCreateComponent implements OnInit {
       this.next();
       console.log(this._step);
       console.log('GREAT!');
+      let skills = [];
+      for(let i = 0; i<this._selectedSkills.length; i++) {
+        if(this._selectedSkills[i]) {
+          skills.push(this._skills[i].name);
+        }
+      }
 
       if(this._character&&this._character.attr){
         this.characterS.createAttr(this._character.attr).subscribe(data => {
@@ -136,6 +142,7 @@ export class CharacterCreateComponent implements OnInit {
             attributes: data.id,
             sex: this._character.sex,
             oldJob: this._character.oldJob.id,
+            skill: skills,
             talent: [1]
           };
           this.characterS.createCharacter(temp).subscribe(char => {
@@ -153,6 +160,36 @@ export class CharacterCreateComponent implements OnInit {
           this._result = JSON.parse(error._body).detail;
         });
       }
+
+
+
+      //
+      // if(this._character&&this._character.attr){
+      //   let temp = {
+      //     name: this._character.name,
+      //     attributes: this._character.attr,
+      //     sex: this._character.sex,
+      //     oldJob: this._character.oldJob.id,
+      //     talent: [],
+      //     skill: skills
+      //   };
+      //   this.characterS.createCharacter(temp).subscribe(char => {
+      //       this._result = char;
+      //       this.next();
+      //   }, error => {
+      //     this._result = JSON.parse(error._body).detail;
+      //     if(error.status === 403) {
+      //       this._result = 'Please login before you start to create your character!'
+      //     }else {
+      //       this._result = JSON.parse(error._body).detail;
+      //     }
+      //   });
+      // }
+
+
+
+
+
     }
   }
 
