@@ -10,7 +10,7 @@
         <button class="btn btn-default z-survival-btn" (click)="confirmNewGame()">NEW GAME</button>
       </div>
       <div class="start-menu-btn">
-        <button class="btn btn-default z-survival-btn" [disabled]="!_userStatusS.isFirstTime">CONTINUE</button>
+        <button class="btn btn-default z-survival-btn" [disabled]="_userStatusS.isFirstTime" (click)="continue()">CONTINUE</button>
       </div>
     </div>
     <app-z-confirm-panel

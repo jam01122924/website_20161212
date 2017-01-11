@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
 export enum ZSurvival_GameState {
+  'loading',
   'start-menu',
   'character-create',
+  'character-select',
   'open-tale',
   'main'
 }

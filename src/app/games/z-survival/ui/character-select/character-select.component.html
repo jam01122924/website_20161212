@@ -1,0 +1,27 @@
+<div class="character-select-container container noselect">
+  <div class="character-select-content">
+    <div class="character-select-sections">
+      <div class="panel z-panel">
+        <div class="panel-heading z-panel-heading">
+          Character Selection
+        </div>
+        <div class="panel-body z-panel-body">
+          <div class="character-select-list" *ngIf="_cs.chars">
+            <div class="character-selection-container z-survival-btn" *ngFor="let char of _cs.chars" (click)="continue(char)">
+              <div class="character-selection-name">{{char.name}}</div>
+            </div>
+          </div>
+          <div class="character-select-error-msg" *ngIf="!_cs.chars">
+            Empty Character List
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-btn-container container">
+      <button class="btn btn-default z-survival-btn bottom-left" (click)="backToMainMenu()">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+      </button>
+    </div>
+  </div>
+</div>

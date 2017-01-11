@@ -5,6 +5,7 @@ import { ZSurvival_GameState, ZGameStateService } from './services/z-game-state.
 import { UserStatusService } from './services/user-status.service';
 import { ZCharacterService } from './services/z-character.service';
 import { ZValueService } from './services/z-value.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-z-survival',
@@ -14,25 +15,45 @@ import { ZValueService } from './services/z-value.service';
 })
 export class ZSurvivalComponent implements OnInit {
   private zSurvival_GameState = ZSurvival_GameState;
-  constructor(private authS: AuthService, private router: Router, private _gs: ZGameStateService) { }
+  constructor(private authS: AuthService, private router: Router, private _gs: ZGameStateService, private _cs: ZCharacterService, private _us: UserStatusService, private tokenS: TokenService) { }
 
   ngOnInit() {
-    // if(!this.authS.loggedIn){
-    //   this.authS.returnUrl = 'z-survival';
-    //   this.router.navigate(['login', ]);
-    // } else if(this.isFirstTime) {
-    //   this.router.navigate(['z-survival/intro']);
-    // } else {
-    //   this.router.navigate(['z-survival/main']);
-    // }
-    this._gs.gameState = ZSurvival_GameState['character-create'];
-    // if(true) {
-    //   this.router.navigate(['z-survival/main']);
-    //   this._gs.gameState = ZSurvival_GameState['main'];
-    // } else {
-    //   this.router.navigate(['z-survival/open-tale']);
-    //   this._gs.gameState = ZSurvival_GameState['open-tale'];
-    // }
+    this.authS.login('james', 'admin123').subscribe(data=>{
+      console.log(data);
+      if(data.token) {
+        // console.log(this.tokenS.token);
+        this.tokenS.token = data.token;
+        this.authS.getUserData().subscribe(data => {
+          this.authS.loggedIn = true;
+          this.authS.currentUser = data[0];
+        // this._gs.gameState = ZSurvival_GameState['character-create'];
+
+
+
+
+
+
+          if(!this.authS.loggedIn){
+            this.authS.returnUrl = 'z-survival';
+            this.router.navigate(['login', ]);
+          } else {
+            this._cs.getCharacters().subscribe(chars=>{
+              this._cs.chars = chars;
+              this._us.isFirstTime = !chars.length;
+              this._gs.gameState = ZSurvival_GameState['start-menu'];
+            });
+          }
+
+
+
+
+
+
+
+
+        });
+      }
+    });
   }
 
 }

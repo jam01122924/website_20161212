@@ -19,7 +19,7 @@ export class StartMenuComponent implements OnInit {
       panelType: 'warn',
       hasCancelBtn: true,
       head: 'start new game',
-      info: 'If you start a new game, you will lose you current game.',
+      info: 'You will start a new game with a new character.',
       confirmInfo: 'Are you sure?'
     }
   }
@@ -32,5 +32,8 @@ export class StartMenuComponent implements OnInit {
     if(r) {
       this._gs.gameState = ZSurvival_GameState['open-tale'];
     }
+  }
+  continue() {
+    this._gs.gameState = ZSurvival_GameState['character-select'];
   }
 }

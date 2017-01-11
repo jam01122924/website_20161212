@@ -37,6 +37,8 @@ import { StartMenuComponent } from './games/z-survival/ui/start-menu/start-menu.
 import { ZConfirmPanelComponent } from './games/z-survival/common/z-confirm-panel/z-confirm-panel.component';
 
 import { MainPipe } from './games/z-survival/common/directives/pipe/main.pipe';
+import { CharacterSelectComponent } from './games/z-survival/ui/character-select/character-select.component';
+import { LoadingComponent } from './games/z-survival/ui/loading/loading.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -84,7 +86,9 @@ const appRoutes: Routes = [
     OpenTaleComponent,
     CharacterCreateComponent,
     StartMenuComponent,
-    ZConfirmPanelComponent
+    ZConfirmPanelComponent,
+    CharacterSelectComponent,
+    LoadingComponent
   ],
   imports: [
     AlertModule,
