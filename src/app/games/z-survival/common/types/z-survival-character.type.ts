@@ -1,19 +1,82 @@
-import { ZSurvivalTalent } from './z-survival-talent.type';
-import { ZSurvivalSkill } from './z-survival-skill.type';
-
-export enum ZSurvival_Job {
-  'Construction Worker',
-  'Waiter/Waitress',
-  'Office Worker',
-  'Salesman',
-  'Programmer',
-  'Student',
-  'Gambler'
+export class ZSurvivalEffect {
+  public id: string;
+  public field: string;
+  public value: number;
+  public type: string;
+  constructor(id, field, value, type){
+    this.id = id;
+    this.field = field;
+    this.value = value;
+    this.type = type;
+  }
 }
+
+export class ZSurvivalTalent {
+  public id: string;
+  public name: string;
+  public description: string;
+  public effect: [ZSurvivalEffect];
+  constructor(id, name, description, effects) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.effect = effects;
+  }
+}
+
+export class ZSurvivalSkill {
+  name: string;
+  description: string;
+  requiredLv: number;
+  requiredSkill: [ZSurvivalSkill];  // skill id
+  effect: [ZSurvivalEffect];  // effect id
+
+  constructor(name: string, description: string, requiredLv: number, requiredSkill: [ZSurvivalSkill], effect: [ZSurvivalEffect]) {
+    this.name = name;
+    this.description = description;
+    this.requiredLv = requiredLv;
+    this.requiredSkill = requiredSkill;
+    this.effect = effect;
+  }
+}
+
+export class ZSurvivalAttributes {
+  public id: string;
+  public strength: number;
+  public perception: number;
+  public endurance: number;
+  public charisma: number;
+  public intelligence: number;
+  public agility: number;
+  public luck: number;
+
+  constructor(id: string, s: number, p: number, e: number, c: number, i: number, a: number ,l: number) {
+    this.id = id;
+    this.strength = s;
+    this.perception = p;
+    this.endurance = e;
+    this.charisma = c;
+    this.intelligence = i;
+    this.agility = a;
+    this.luck = l;
+  }
+}
+
+export class ZSurvivalOldjob {
+  public id: string;
+  public name: string;
+  public description: string;
+  public talent: [ZSurvivalTalent];
+  public attributes: ZSurvivalAttributes;
+
+}
+
 
 export class ZSurvivalCharacter {
   private _name: string;        // Name
   private _id: string;          // Id
+  private _sex: string;         // Sex
+
 
   private _cur_hp: number;      // Dead if becomes 0
   private _max_hp: number;      // max hp
@@ -90,48 +153,37 @@ export class ZSurvivalCharacter {
   private _energy_dmg_timed: number;
   private _persuade_rate_timed: number;
 
-
-  private _str: number;
-  private _pec: number;
-  private _end: number;
-  private _cha: number;
-  private _int: number;
-  private _agi: number;
-  private _luc: number;
-
-  private _job: ZSurvival_Job;
-
+  private _attributes: ZSurvivalAttributes;
+  private _job: ZSurvivalOldjob;
   private _talent: ZSurvivalTalent[];
   private _skill: ZSurvivalSkill[];
+  private _status: any;
 
   constructor(
-    name: string, id: string,
-    str: number, pec: number, end: number, cha: number, int: number, agi: number, luc: number, job: ZSurvival_Job
+    id: string, name: string, sex: string,
+    job: ZSurvivalOldjob, talent: [ZSurvivalTalent],
+    skill: [ZSurvivalSkill], attributes: ZSurvivalAttributes, status: any
   ) {
-    this._name = name; this._id = id;
-    this._str = str; this._pec = pec; this._end = end; this._cha = cha;
-    this._int = int; this._agi = agi; this._luc = luc;
-    this._job = job; this._talent = []; this._skill = [];
-    this._skillpoint = 0; this._exp = 0; this._lv = 1;
-    this._hunger = 0; this._thirst = 0; this._health = 0;
-    this.calculateCharacterStatus();
+    this._name = name; this._id = id; this._sex = sex;
+    this._job = job; this._talent = talent;
+    this._skill = skill; this._attributes = attributes; this._status = status;
   }
 
   calculateCharacterStatus() {
-    this._max_hp = 25 + this._end * 5;
-    this._max_ap = 25 + this._agi * 5;
-    this._max_weight = 20 + this._str*10;
-    this._max_stamina = 800 + this._end * 100;
-    this._dodge_rate = this._agi*3;
-    this._hit_rate = 50 + this._pec*5;
-    this._crt_rate = 10 + this._luc * 5;
-    this._crt_dmg = 1.5 + this._luc * 0.1;
-    this._melee_dmg = 1 + this._str*0.1;
-    this._range_dmg = 1 + this._pec*0.1;
-    this._energy_dmg = 1 + this._int*0.1;
-    this._persuade_rate = 50 + this._cha*5;
-    this._rest_rate = 100 + this._end*10;
-    this._recover_rate = 1 + this._end*0.1;
+    this._max_hp = 25 + this._attributes.endurance * 5;
+    this._max_ap = 25 + this._attributes.agility * 5;
+    this._max_weight = 20 + this._attributes.strength*10;
+    this._max_stamina = 800 + this._attributes.endurance * 100;
+    this._dodge_rate = this._attributes.agility*3;
+    this._hit_rate = 50 + this._attributes.perception*5;
+    this._crt_rate = 10 + this._attributes.luck * 5;
+    this._crt_dmg = 1.5 + this._attributes.luck * 0.1;
+    this._melee_dmg = 1 + this._attributes.strength*0.1;
+    this._range_dmg = 1 + this._attributes.perception*0.1;
+    this._energy_dmg = 1 + this._attributes.intelligence*0.1;
+    this._persuade_rate = 50 + this._attributes.charisma*5;
+    this._rest_rate = 100 + this._attributes.endurance*10;
+    this._recover_rate = 1 + this._attributes.endurance*0.1;
 
     this._max_hp_timed = this._max_hp * this._max_hp_timer;
     this._max_ap_timed = this._max_ap * this._max_ap_timer;
@@ -151,16 +203,10 @@ export class ZSurvivalCharacter {
   }
 
   // =============================== Accessors: ===============================
-  get name():string { return this._name; } set name(d) { this._name = d; }
-  get id():string { return this._id; } set id(d) { this._id = d; }
-  get str():number { return this._str; } set str(d) { this._str = d; }
-  get pec():number { return this._pec; } set pec(d) { this._pec = d; }
-  get end():number { return this._end; } set end(d) { this._end = d; }
-  get cha():number { return this._cha; } set cha(d) { this._cha = d; }
-  get int():number { return this._int; } set int(d) { this._int = d; }
-  get agi():number { return this._agi; } set agi(d) { this._agi = d; }
-  get luc():number { return this._luc; } set luc(d) { this._luc = d; }
-  get job():ZSurvival_Job { return this._job; } set job(d) { this._job = d; }
+  get name():string { return this._name; }
+  get id():string { return this._id; }
+  get attributes():ZSurvivalAttributes { return this._attributes; }
+  get job():ZSurvivalOldjob { return this._job; }
   get talent():ZSurvivalTalent[] { return this._talent; } set talent(d) { this._talent = d; }
   get skill():ZSurvivalSkill[] { return this._skill; } set skill(d) { this._skill = d; }
   get skillpoint():number { return this._skillpoint; } set skillpoint(d) { this._skillpoint = d; }

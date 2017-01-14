@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 
+import { ZSurvivalCharacter } from '../common/types/z-survival-character.type';
 import { HttpService } from '../../../services/http.service';
 import { ZValueService } from './z-value.service';
 import {Subscribable} from "rxjs/Observable";
 import {Subscription, Observable} from "rxjs";
 
+
 @Injectable()
 export class ZCharacterService {
   public chars: any;
-  public currChars: any;
+  public currChar: ZSurvivalCharacter;
+
   constructor(private httpS: HttpService, private valueS: ZValueService) { }
 
   getOldJob() {
@@ -33,5 +36,11 @@ export class ZCharacterService {
 
   cleanLocalCharacters() {
     this.chars = null;
+    this.currChar = null;
+  }
+  setLocalCharacters(char) {
+    this.currChar = new ZSurvivalCharacter(char.id, char.name, char.sex,
+                                            char.oldJob, char.talent,
+                                            char.skill, char.attributes, char.status)
   }
 }

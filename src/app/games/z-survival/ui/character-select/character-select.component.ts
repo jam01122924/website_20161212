@@ -23,8 +23,9 @@ export class CharacterSelectComponent implements OnInit {
   }
 
   continue(char) {
-    this._cs.currChars = char;
     this._gs.gameState = ZSurvival_GameState['loading'];
+    this._cs.setLocalCharacters(char);
+    console.log(this._cs.currChar);
   }
 
   backToMainMenu() {
