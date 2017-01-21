@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ZCharacterService } from '../../services/z-character.service';
+import { ZSurvival_GameState, ZGameStateService } from '../../services/z-game-state.service';
 enum CharacterCreateStep {
   'sex',
   'job',
@@ -34,7 +35,7 @@ export class CharacterCreateComponent implements OnInit {
   private _result: any;
   private _successInfo: string;
 
-  constructor(private characterS: ZCharacterService) { }
+  constructor(private characterS: ZCharacterService, private _gs: ZGameStateService) { }
 
   ngOnInit() {
     this._step = 0;
@@ -46,7 +47,7 @@ export class CharacterCreateComponent implements OnInit {
     this.confirmInfo = {};
 
     // job step:
-    this.characterS.getOldJob().subscribe(data=>{
+    this.characterS.getOldJobList().subscribe(data=>{
       this._oldjobs = data.results;
       this._currJob = 0;
       this._character.oldJob = this._oldjobs[this._currJob];
@@ -57,7 +58,7 @@ export class CharacterCreateComponent implements OnInit {
     let param = {
       requiredLv: 1
     };
-    this.characterS.getSkill(param).subscribe(data=>{
+    this.characterS.getSkillList(param).subscribe(data=>{
       this._skills = data.results;
       for(let i=0; i< this._skills.length; i++) {
         this._selectedSkills.push(false);
@@ -135,27 +136,35 @@ export class CharacterCreateComponent implements OnInit {
       }
 
       if(this._character&&this._character.attr){
-        this.characterS.createAttr(this._character.attr).subscribe(data => {
-          console.log(data);
-          let temp = {
-            name: this._character.name,
-            attributes: data.id,
-            sex: this._character.sex,
-            oldJob: this._character.oldJob.id,
-            skill: skills,
-            talent: [1]
-          };
-          this.characterS.createCharacter(temp).subscribe(char => {
-            this._result = char;
-            this.next();
+        this.characterS.createAttr(this._character.attr).subscribe(attrData => {
+          let status = this.characterS.initialStatus(this._character.attr);
+          this.characterS.createStatus(status).subscribe(statusData=>{
+            let temp = {
+              name: this._character.name,
+              attributes: attrData.id,
+              sex: this._character.sex,
+              oldJob: this._character.oldJob.id,
+              skill: skills,
+              talent: [this._character.oldJob.talent.id],
+              status: statusData.id
+            };
+            this.characterS.createCharacter(temp).subscribe(char => {
+              this._result = char;
+              this.next();
+              setTimeout(()=>{
+                this._gs.gameState = ZSurvival_GameState['main'];
+              }, 2000)
+            }, error => {
+              this._result = JSON.parse(error._body).detail;
+              if(error.status === 403) {
+                this._result = 'Please login before you start to create your character!'
+              }else {
+                this._result = JSON.parse(error._body).detail;
+              }
+            });
           }, error => {
             this._result = JSON.parse(error._body).detail;
-            if(error.status === 403) {
-              this._result = 'Please login before you start to create your character!'
-            }else {
-              this._result = JSON.parse(error._body).detail;
-            }
-          })
+          });
         }, error => {
           this._result = JSON.parse(error._body).detail;
         });

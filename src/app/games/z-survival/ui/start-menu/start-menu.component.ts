@@ -34,6 +34,6 @@ export class StartMenuComponent implements OnInit {
     }
   }
   continue() {
-    this._gs.gameState = ZSurvival_GameState['character-select'];
+    this._gs.gameState = ZSurvival_GameState['main'];
   }
 }

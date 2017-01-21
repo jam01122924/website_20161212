@@ -37,7 +37,7 @@ export class ZSurvivalComponent implements OnInit {
             this.authS.returnUrl = 'z-survival';
             this.router.navigate(['login', ]);
           } else {
-            this._cs.getCharacters().subscribe(chars=>{
+            this._cs.getCharacterList().subscribe(chars=>{
               this._cs.chars = chars;
               this._us.isFirstTime = !chars.length;
               this._gs.gameState = ZSurvival_GameState['start-menu'];

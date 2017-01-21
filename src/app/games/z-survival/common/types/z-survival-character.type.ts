@@ -181,7 +181,7 @@ export class ZSurvivalCharacter {
     this._melee_dmg = 1 + this._attributes.strength*0.1;
     this._range_dmg = 1 + this._attributes.perception*0.1;
     this._energy_dmg = 1 + this._attributes.intelligence*0.1;
-    this._persuade_rate = 50 + this._attributes.charisma*5;
+    this._persuade_rate = 40 + this._attributes.charisma*5;
     this._rest_rate = 100 + this._attributes.endurance*10;
     this._recover_rate = 1 + this._attributes.endurance*0.1;
 
@@ -261,4 +261,18 @@ export class ZSurvivalCharacter {
   get range_dmg():number { return this._range_dmg_timed; }
   get energy_dmg():number { return this._energy_dmg_timed; }
   get persuade_rate():number { return this._persuade_rate_timed; }
+}
+
+
+export class CharacterStatus {
+  public id: string;
+  public created: string;
+  public name: string;
+  public sex: string;
+  public oldJob: any;
+  public talent: Array<any>;
+  public skill: Array<any>;
+  public status: any;
+  public attributes: any;
+  public owner: string;
 }

@@ -64,6 +64,7 @@ export class HttpService {
     if(this.tokenS.token){
       console.log(this.tokenS.token);
       headers.append('Authorization', 'JWT ' + this.tokenS.token);
+      // headers.append('X-CSRFToken', 'UicGyOhH4xkEcW6JpSUmN9g3pSM1XNjCTKSDO5wU6ndk40mzRLolGwnRbrlrt5hO');
     }
     if(param){
       for(var key in param) {
