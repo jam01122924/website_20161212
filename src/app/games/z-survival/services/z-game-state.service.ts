@@ -24,4 +24,9 @@ export class ZGameStateService {
       this._gameState = state;
     }
   }
+
+  // Compare current game state with
+  checkGameState(){
+
+  }
 }

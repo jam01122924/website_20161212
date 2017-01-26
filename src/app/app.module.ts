@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AlertModule, CarouselModule, AccordionModule, DropdownModule, ProgressbarModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule, CarouselModule, AccordionModule, DropdownModule, ProgressbarModule, TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './common/login/login.component';
@@ -39,6 +39,8 @@ import { ZConfirmPanelComponent } from './games/z-survival/common/z-confirm-pane
 import { MainPipe } from './games/z-survival/common/directives/pipe/main.pipe';
 import { CharacterSelectComponent } from './games/z-survival/ui/character-select/character-select.component';
 import { LoadingComponent } from './games/z-survival/ui/loading/loading.component';
+import { InputDebounceComponent } from './games/z-survival/common/directives/input-debounce/input-debounce.component';
+import { ZMeComponent } from './games/z-survival/ui/z-main/z-me/z-me.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,17 +49,19 @@ const appRoutes: Routes = [
   { path: 'games', component: GamesComponent },
   { path: 'z-survival', component: ZSurvivalComponent,
     children: [
-        { path: 'login', component: LoginComponent },
-        { path: 'start-menu', component: StartMenuComponent },
-        { path: 'open-tale', component: OpenTaleComponent },
-        { path: 'main',  component: ZMainComponent,
-          children: [
-            { path: '' },
-            { path: 'hide', component: ZHideComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'start-menu', component: StartMenuComponent },
+      { path: 'open-tale', component: OpenTaleComponent },
+      { path: 'character-create', component: CharacterCreateComponent },
+      { path: 'main',  component: ZMainComponent,
+        children: [
+          { path: '', component: ZHideComponent },
+          { path: 'hide', component: ZHideComponent },
+          { path: 'me', component: ZMeComponent },
 
-          ]
-        },
-        { path: 'home',  component: HomeComponent },
+        ]
+      },
+      { path: 'home',  component: HomeComponent },
     ]
   },
   { path: '**', component: PageNotFoundComponent }
@@ -88,12 +92,15 @@ const appRoutes: Routes = [
     StartMenuComponent,
     ZConfirmPanelComponent,
     CharacterSelectComponent,
-    LoadingComponent
+    LoadingComponent,
+    InputDebounceComponent,
+    ZMeComponent
   ],
   imports: [
     AlertModule,
     CarouselModule,
     AccordionModule,
+    TabsModule,
     DropdownModule,
     ProgressbarModule,
     BrowserModule,

@@ -1,0 +1,54 @@
+@import '../../../../../color';
+
+.z-main-header-container {
+  padding: 5px 5px 0 5px;
+  width: 100%;
+  border-bottom: 1px solid $color-green40;
+  .z-main-header-content {
+    width: 100%;
+  }
+  .character-icon-container{
+    margin-left: 15px;
+    float: left;
+    width: 66px;
+    .character-icon {
+      padding: 5px;
+      border: 1px solid $color-green40;
+      max-width: 66px;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .character-status{
+    width: 85%;
+    display: inline-block;
+  }
+  .character-status-bar-container {
+    padding-left: 2px;
+    padding-right: 2px;
+    .character-status-bar {
+      background-color: $color-gray5;
+      border: 1px solid $color-green40;
+      padding: 0;
+      margin: 4px 0;
+      .w3-progressbar {
+        background-color: $color-green30;
+      }
+      .bar-text {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: $color-gray85;
+      }
+    }
+  }
+  .z-main-header-menu {
+    float: right;
+    text-align: right;
+    margin: 0 5px 0 0;
+  }
+}

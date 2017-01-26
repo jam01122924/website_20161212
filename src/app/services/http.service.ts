@@ -78,7 +78,7 @@ export class HttpService {
   }
 
   handleError(error) {
-    console.log(error);
+    console.error(error);
     return Observable.throw(error || 'Server error')
   }
 }

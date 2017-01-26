@@ -1,22 +1,23 @@
 <div class="game-container">
   <div class="game-canvas">
-    <div *ngIf="_gs.gameState === zSurvival_GameState['loading']" >
-      <app-loading></app-loading>
-    </div>
-    <div *ngIf="_gs.gameState === zSurvival_GameState['start-menu']" >
-      <app-start-menu></app-start-menu>
-    </div>
-    <div *ngIf="_gs.gameState === zSurvival_GameState['main']">
-      <app-z-main></app-z-main>
-    </div>
-    <div *ngIf="_gs.gameState === zSurvival_GameState['character-select']">
-      <app-character-select></app-character-select>
-    </div>
-    <div *ngIf="_gs.gameState === zSurvival_GameState['open-tale']">
-      <app-open-tale></app-open-tale>
-    </div>
-    <div *ngIf="_gs.gameState === zSurvival_GameState['character-create']">
-      <app-character-create></app-character-create>
-    </div>
+    <router-outlet></router-outlet>
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['loading']" >-->
+      <!--<app-loading></app-loading>-->
+    <!--</div>-->
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['start-menu']" >-->
+      <!--<app-start-menu></app-start-menu>-->
+    <!--</div>-->
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['main']">-->
+      <!--<app-z-main></app-z-main>-->
+    <!--</div>-->
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['character-select']">-->
+      <!--<app-character-select></app-character-select>-->
+    <!--</div>-->
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['open-tale']">-->
+      <!--<app-open-tale></app-open-tale>-->
+    <!--</div>-->
+    <!--<div *ngIf="_gs.gameState === zSurvival_GameState['character-create']">-->
+      <!--<app-character-create></app-character-create>-->
+    <!--</div>-->
   </div>
 </div>

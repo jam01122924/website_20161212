@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 import { ZCharacterService } from '../../services/z-character.service';
 import { ZSurvival_GameState, ZGameStateService } from '../../services/z-game-state.service';
@@ -23,6 +24,7 @@ export class CharacterCreateComponent implements OnInit {
   private _maxStep: number;
   private _character: any;
   public confirmInfo: any;
+  public errors: any;
 
   // job step:
   private _oldjobs: any[] = [];
@@ -34,8 +36,9 @@ export class CharacterCreateComponent implements OnInit {
   private _selectedSkills: boolean[] = [];
   private _result: any;
   private _successInfo: string;
+  private _defaultAttrPoint = 3;
 
-  constructor(private characterS: ZCharacterService, private _gs: ZGameStateService) { }
+  constructor(private characterS: ZCharacterService, private _gs: ZGameStateService, private router: Router) { }
 
   ngOnInit() {
     this._step = 0;
@@ -45,6 +48,9 @@ export class CharacterCreateComponent implements OnInit {
       sex: 'F'
     };
     this.confirmInfo = {};
+    this.errors = {
+      repeatName: false
+    };
 
     // job step:
     this.characterS.getOldJobList().subscribe(data=>{
@@ -67,7 +73,7 @@ export class CharacterCreateComponent implements OnInit {
     this._result = '';
     this._successInfo = 'Your Character has been created. You will enter the game world shortly...';
 
-    this._attrPoint = 3;
+    this._attrPoint = this._defaultAttrPoint;
     this._attrMax = 10;
     this._skillPoint = 2;
   }
@@ -77,19 +83,31 @@ export class CharacterCreateComponent implements OnInit {
     if(this._oldjobs){
       this._currJob++;
       this._currJob = this._currJob===this._oldjobs.length?0:this._currJob;
-      console.log(this._currJob);
       this._character.oldJob = this._oldjobs[this._currJob];
       this._character.attr = JSON.parse(JSON.stringify(this._character.oldJob.attributes));
+      this._attrPoint = this._defaultAttrPoint;
     }
   }
   jobPrevious() {
     if(this._oldjobs){
       this._currJob--;
       this._currJob = this._currJob===-1?(this._oldjobs.length-1):this._currJob;
-      console.log(this._currJob);
       this._character.oldJob = this._oldjobs[this._currJob];
       this._character.attr = JSON.parse(JSON.stringify(this._character.oldJob.attributes));
+      this._attrPoint = this._defaultAttrPoint;
     }
+  }
+
+  checkCharacterName(name) {
+    this.characterS.searchCharacterByName(name).subscribe(data=>{
+      if(data.length===0){
+        this._character.name = name;
+        this.errors.repeatName = false;
+      }else {
+        this._character.name = '';
+        this.errors.repeatName = true;
+      }
+    });
   }
 
   changeAttr(key, value) {
@@ -121,13 +139,11 @@ export class CharacterCreateComponent implements OnInit {
   }
   confirm() {
     console.log(this._character);
-    this.confirmInfo.nameError = (!this._character.name)?'Please Enter Your Character Name.':(this._character.name.length<4||this._character.name.length>20)?'Name length should be between 4-20 characters':false;
+    this.confirmInfo.nameError = (!this._character.name)?'Please Enter A Valid Character Name.':(this._character.name.length<4||this._character.name.length>20)?'Name length should be between 4-20 characters':false;
     this.confirmInfo.attrError = this._attrPoint === 0?false:'You still have attribute points left. Please assign them.';
     this.confirmInfo.skillError = this._skillPoint === 0?false:'You still have skill points left. Please assign them.';
     if(!this.confirmInfo.nameError && !this.confirmInfo.attrError && !this.confirmInfo.skillError) {
       this.next();
-      console.log(this._step);
-      console.log('GREAT!');
       let skills = [];
       for(let i = 0; i<this._selectedSkills.length; i++) {
         if(this._selectedSkills[i]) {
@@ -137,7 +153,7 @@ export class CharacterCreateComponent implements OnInit {
 
       if(this._character&&this._character.attr){
         this.characterS.createAttr(this._character.attr).subscribe(attrData => {
-          let status = this.characterS.initialStatus(this._character.attr);
+          let status = this.characterS.initialStatusForCreate(this._character.attr);
           this.characterS.createStatus(status).subscribe(statusData=>{
             let temp = {
               name: this._character.name,
@@ -153,9 +169,11 @@ export class CharacterCreateComponent implements OnInit {
               this.next();
               setTimeout(()=>{
                 this._gs.gameState = ZSurvival_GameState['main'];
+                this.router.navigate(['/z-survival/main']);
               }, 2000)
             }, error => {
-              this._result = JSON.parse(error._body).detail;
+              console.log(JSON.parse(error._body));
+              this._result = JSON.parse(error._body);
               if(error.status === 403) {
                 this._result = 'Please login before you start to create your character!'
               }else {
@@ -169,35 +187,6 @@ export class CharacterCreateComponent implements OnInit {
           this._result = JSON.parse(error._body).detail;
         });
       }
-
-
-
-      //
-      // if(this._character&&this._character.attr){
-      //   let temp = {
-      //     name: this._character.name,
-      //     attributes: this._character.attr,
-      //     sex: this._character.sex,
-      //     oldJob: this._character.oldJob.id,
-      //     talent: [],
-      //     skill: skills
-      //   };
-      //   this.characterS.createCharacter(temp).subscribe(char => {
-      //       this._result = char;
-      //       this.next();
-      //   }, error => {
-      //     this._result = JSON.parse(error._body).detail;
-      //     if(error.status === 403) {
-      //       this._result = 'Please login before you start to create your character!'
-      //     }else {
-      //       this._result = JSON.parse(error._body).detail;
-      //     }
-      //   });
-      // }
-
-
-
-
 
     }
   }

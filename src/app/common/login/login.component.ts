@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
           this.loginError = '';
           this.authS.loggedIn = true;
           this.authS.currentUser = data[0];
+          this.authS.startRefreshToken(this.tokenS.token);
           this.router.navigate([this.authS.returnUrl]);
         }, error => {
           this.tokenS.token = '';
@@ -49,8 +50,7 @@ export class LoginComponent implements OnInit {
   }
 
   public logout() {
-    this.tokenS.token = '';
-    this.authS.loggedIn = false;
+    this.authS.logout();
   }
 
   public registerSuccess(regSuccess) {

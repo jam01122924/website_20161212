@@ -10,10 +10,16 @@ import {Subscription, Observable} from "rxjs";
 
 @Injectable()
 export class ZCharacterService {
-  public chars: any;
-  public currChar: ZSurvivalCharacter;
+  public char: any;
 
-  constructor(private httpS: HttpService, private valueS: ZValueService) { }
+  constructor(private httpS: HttpService, private valueS: ZValueService) {
+    this.char = {
+      oldJob: {},
+      status: {},
+      attributes: {},
+      icon: ''
+    }
+  }
 
   getOldJobList() {
     return this.httpS.get(this.valueS.url.oldJob);
@@ -52,17 +58,32 @@ export class ZCharacterService {
     return this.httpS.get(this.valueS.url.character);
   }
 
-  cleanLocalCharacters() {
-    this.chars = null;
-    this.currChar = null;
-  }
-  setLocalCharacters(char) {
-    this.currChar = new ZSurvivalCharacter(char.id, char.name, char.sex,
-                                            char.oldJob, char.talent,
-                                            char.skill, char.attributes, char.status)
+  searchCharacterByName(name) {
+    return this.httpS.get(this.valueS.url.characterSearch, {name: name, precise: true});
   }
 
-  initialStatus(attrs) {
+  cleanLocalCharacters() {
+    this.char = null;
+  }
+
+  initialCharacter() {
+    this.getCharacterList().subscribe(charData=>{
+      Observable.forkJoin(
+        this.getOldJob(charData[0].oldJob),
+        this.getStatus(charData[0].status),
+        this.getAttr(charData[0].attributes)
+      ).subscribe(data=>{
+          this.char.oldJob = data[0];
+          this.char.status = data[1];
+          this.char.attributes = data[2];
+          this.char.icon = 'assets/imgs/games/z-survival/head-icon/' + this.char.oldJob.id + '.png';
+        }, error=>{
+        console.log('Failed load character:', error);
+      });
+    });
+  }
+
+  initialStatusForCreate(attrs) {
     return {
       hp: 25 + attrs.endurance * 5,
       max_hp: 25 + attrs.endurance * 5,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 import { ZSurvival_GameState, ZGameStateService } from '../../services/z-game-state.service'
 
@@ -14,7 +15,7 @@ export class OpenTaleComponent implements OnInit {
   private _currImg: string;
   private _currFrame: number;
   private _renderTextFinished: boolean;
-  constructor(private _gs: ZGameStateService) { }
+  constructor(private _gs: ZGameStateService, private router: Router) { }
 
   ngOnInit() {
     this.openTaleFinish = false;
@@ -76,6 +77,7 @@ export class OpenTaleComponent implements OnInit {
         this.renderText(this._frames[this._currFrame].text);
       }else {
         this._gs.gameState = ZSurvival_GameState['character-create'];
+        this.router.navigate(['/z-survival/character-create']);
       }
     } else {
       this._currText = this._frames[this._currFrame].text;

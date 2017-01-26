@@ -1,4 +1,4 @@
-<div class="character-create-container container noselect">
+<div class="character-create-container noselect">
   <div class="character-create-content">
     <div class="character-create-sections">
 
@@ -7,7 +7,10 @@
           <div class="panel-heading z-panel-heading">Select Sex</div>
           <div class="panel-body">
             <div class="character-create-item-container align-center">
-              <label>Name: </label><input type="text" class="form-control z-input" placeholder="Character Name" [(ngModel)]="_character.name">
+              <label>Name: </label>
+              <!--<input type="text" class="form-control z-input" placeholder="Character Name" [(ngModel)]="_character.name">-->
+              <input-debounce delay="1500" placeholder="Character Name" (value)="checkCharacterName($event)"></input-debounce>
+              <label class="text-danger" *ngIf="errors.repeatName">This Name already Exist! Please try a different name.</label>
             </div>
             <div class="character-create-item-container align-center">
               <label>Gender: </label>

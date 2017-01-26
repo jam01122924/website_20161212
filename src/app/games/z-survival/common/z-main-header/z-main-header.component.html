@@ -1,9 +1,55 @@
 <div class="z-main-header-container">
-  <div class="z-main-header-content">
-    <div class="character-icon">
-      <img src="{{characterIcon}}">
+  <div class="z-main-header-content" *ngIf="readyFlag">
+    <div class="character-status">
+      <div class="row">
+        <div class="character-icon-container">
+          <div class="character-icon">
+            <img [src]="_cs.char.icon">
+          </div>
+        </div>
+        <div class="col-xs-4 character-status-bar-container">
+          <div class="w3-progress-container character-status-bar w3-small">
+            <div class="w3-progressbar" [ngStyle]="{'width': _cs.char.status.hp*100/_cs.char.status.max_hp + '%'}"></div>
+            <div class="bar-text w3-center">
+              <i class="fa fa-plus-square" aria-hidden="true"></i>
+              {{_cs.char.status.hp}}/{{_cs.char.status.max_hp}}
+            </div>
+          </div>
+          <div class="w3-progress-container character-status-bar w3-small">
+            <div class="w3-progressbar" [ngStyle]="{'width': _cs.char.status.stamina*100/_cs.char.status.max_stamina + '%'}"></div>
+            <div class="bar-text w3-center">
+              <i class="fa fa-bolt" aria-hidden="true"></i>
+              {{_cs.char.status.stamina}}/{{_cs.char.status.max_stamina}}
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 character-status-bar-container">
+          <div class="w3-progress-container character-status-bar w3-small">
+            <div class="w3-progressbar" [ngStyle]="{'width': _cs.char.status.hunger + '%'}"></div>
+            <div class="bar-text w3-center">
+              <i class="fa fa-cutlery" aria-hidden="true"></i>
+              {{_cs.char.status.hunger}}
+            </div>
+          </div>
+          <div class="w3-progress-container character-status-bar w3-small">
+            <div class="w3-progressbar" [ngStyle]="{'width': _cs.char.status.thirst + '%'}"></div>
+            <div class="bar-text w3-center">
+              <i class="fa fa-tint" aria-hidden="true"></i>
+              {{_cs.char.status.thirst}}
+            </div>
+          </div>
+          <div class="w3-progress-container character-status-bar w3-small">
+            <div class="w3-progressbar" [ngStyle]="{'width': _cs.char.status.health + '%'}"></div>
+            <div class="bar-text w3-center">
+              <i class="fa fa-heartbeat" aria-hidden="true"></i>
+              {{_cs.char.status.health}}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="character-status-bar">
+    <div class="z-main-header-menu">
+      <button class="btn-default btn z-survival-btn">M</button>
     </div>
   </div>
 </div>

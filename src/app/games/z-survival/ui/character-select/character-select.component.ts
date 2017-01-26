@@ -13,20 +13,20 @@ export class CharacterSelectComponent implements OnInit {
   constructor(private _cs: ZCharacterService, private _gs: ZGameStateService) { }
 
   ngOnInit() {
-    if(!this._cs.chars) {
-      this._cs.getCharacterList().subscribe(data=>{
-        this._cs.chars = data;
-      }, error=>{
-        console.error(error);
-      })
-    }
+    // if(!this._cs.chars) {
+    //   this._cs.getCharacterList().subscribe(data=>{
+    //     this._cs.chars = data;
+    //   }, error=>{
+    //     console.error(error);
+    //   })
+    // }
   }
 
   continue(char) {
-    this._gs.gameState = ZSurvival_GameState['loading'];
-    this._cs.setLocalCharacters(char);
-    console.log(this._cs.currChar);
-    setTimeout(()=>{this._gs.gameState = ZSurvival_GameState['main'];}, 800);
+    // this._gs.gameState = ZSurvival_GameState['loading'];
+    // this._cs.setLocalCharacters(char);
+    // console.log(this._cs.currChar);
+    // setTimeout(()=>{this._gs.gameState = ZSurvival_GameState['main'];}, 800);
   }
 
   backToMainMenu() {

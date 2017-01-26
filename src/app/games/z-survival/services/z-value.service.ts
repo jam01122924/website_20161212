@@ -12,6 +12,7 @@ export class ZValueService {
     this._url = {
       root: this._vs.url.root + 'character/',
       character: 'character/character/',
+      characterSearch: 'character/character-search/',
       attributes: 'character/attributes/',
       oldJob: 'character/oldjob/',
       talent: 'character/talent/',

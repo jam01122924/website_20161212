@@ -9,6 +9,7 @@ export class ValueService {
     this._url = {
       root: 'http://127.0.0.1:8998/api/',
       login: 'api-token-auth/',
+      refreshToken: 'api-token-verify/',
       register: 'user-info/users/',
       users: 'user-info/users/',
       character: 'character/'
