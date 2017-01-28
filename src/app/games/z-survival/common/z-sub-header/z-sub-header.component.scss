@@ -1,0 +1,29 @@
+@import '../../../../../color';
+
+.z-sub-header-container {
+  ul {
+    border-bottom: 1px solid $color-green40;
+  }
+  .w3-navbar li {
+    width: 2% !important;
+    display: inline-block;
+    text-align: center;
+    color: $color-green40;
+  }
+  @media screen and (max-width: 600px) {
+    .w3-navbar li {
+      width: 1.9% !important;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+  .w3-navbar li:hover, .w3-navbar li:active, .w3-navbar li a:hover, .w3-navbar li a:active {
+    background-color: $color-green40;
+  }
+  .active {
+    color: $color-gray5 !important;
+    background-color: $color-green40;
+  }
+
+
+}

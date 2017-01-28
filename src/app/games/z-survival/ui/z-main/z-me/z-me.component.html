@@ -1,26 +1,12 @@
 <div class="z-me-out-container">
   <div class="z-me-container">
-    <ul class="w3-navbar">
-      <li><a>
-        <i class="fa fa-address-card-o" aria-hidden="true"></i>
-        <span class="hidden-xs hidden-sm">Status</span>
-      </a></li>
-      <li><a>
-        <i class="fa fa-sitemap" aria-hidden="true"></i>
-        <span class="hidden-xs hidden-sm">Skill</span>
-      </a></li>
-      <li><a>
-        <i class="fa fa-magic" aria-hidden="true"></i>
-        <span class="hidden-xs hidden-sm">Talent</span>
-      </a></li>
-      <li><a>
-        <i class="fa fa-male" aria-hidden="true"></i>
-        <span class="hidden-xs hidden-sm">Equipment</span>
-      </a></li>
-      <li><a>
-        <i class="fa fa-briefcase" aria-hidden="true"></i>
-        <span class="hidden-xs hidden-sm">Inventory</span>
-      </a></li>
-    </ul>
+    <div class="z-men-content">
+      <div *ngIf="topMenu[0].active"><app-z-me-status></app-z-me-status></div>
+      <div *ngIf="topMenu[1].active"><app-z-me-skill></app-z-me-skill></div>
+      <div *ngIf="topMenu[2].active"><app-z-me-talent></app-z-me-talent></div>
+      <div *ngIf="topMenu[3].active"><app-z-me-equipment></app-z-me-equipment></div>
+      <div *ngIf="topMenu[4].active"><app-z-me-inventory></app-z-me-inventory></div>
+    </div>
+    <app-z-sub-header [menus]="topMenu" class="z-me-menu-container"></app-z-sub-header>
   </div>
 </div>

@@ -1,9 +1,11 @@
 <div class="z-canvas-container z-main-out-container">
   <div class="z-main-container">
+    <div class="z-middle-body-box">
+      <router-outlet style="height: 100%; max-height: 100%"></router-outlet>
+    </div>
     <div class="z-top-header-box">
       <app-z-main-header [readyFlag]="loadingComplete"></app-z-main-header>
     </div>
-    <router-outlet></router-outlet>
     <div class="z-bottom-menu-box">
       <app-z-bottom-menu [w]="w" [h]="h"></app-z-bottom-menu>
     </div>

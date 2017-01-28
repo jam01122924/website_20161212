@@ -76,6 +76,7 @@ export class ZCharacterService {
           this.char.oldJob = data[0];
           this.char.status = data[1];
           this.char.attributes = data[2];
+          console.log(this.char);
           this.char.icon = 'assets/imgs/games/z-survival/head-icon/' + this.char.oldJob.id + '.png';
         }, error=>{
         console.log('Failed load character:', error);

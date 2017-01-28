@@ -99,7 +99,7 @@ export class AuthService {
     var token = this.tokenS.token?this.tokenS.token:this.cookieS.get('token')?this.cookieS.get('token'):'';
     return new Promise((resolve, reject) => {
       this.verifyToken(token).subscribe(data => {
-        console.log("checkUserLogin pass", data.token);
+        // console.log("checkUserLogin pass", data.token);
         this.tokenS.token = data.token;
         this.loggedIn = true;
         this.cookieS.put('token', this.tokenS.token);

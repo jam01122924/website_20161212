@@ -19,8 +19,7 @@ export class ZSurvivalComponent implements OnInit {
 
   ngOnInit() {
     this.authS.checkUserLogin('z-survival').then(response => {
-      console.log(response);
-      console.log(this.tokenS.token);
+      // console.log(response);
       this._gs.gameState = ZSurvival_GameState['start-menu'];
       this.router.navigate(['/z-survival/start-menu']);
     });

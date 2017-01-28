@@ -1,0 +1,11 @@
+<div class="z-sub-header-container">
+  <div class="z-sub-header-content">
+    <ul class="w3-navbar">
+      <li *ngFor="let menu of menus" [ngStyle]="{'min-width': 100/menus.length + '%'}"
+          [ngClass]="{'active': menu.active}" (click)="clickMenu(menu)"><a>
+        <i class="{{menu.icon}}" aria-hidden="true"></i>
+        <span class="hidden-xs hidden-sm">{{menu.text}}</span>
+      </a></li>
+    </ul>
+  </div>
+</div>

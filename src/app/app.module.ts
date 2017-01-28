@@ -41,6 +41,13 @@ import { CharacterSelectComponent } from './games/z-survival/ui/character-select
 import { LoadingComponent } from './games/z-survival/ui/loading/loading.component';
 import { InputDebounceComponent } from './games/z-survival/common/directives/input-debounce/input-debounce.component';
 import { ZMeComponent } from './games/z-survival/ui/z-main/z-me/z-me.component';
+import { ZSubHeaderComponent } from './games/z-survival/common/z-sub-header/z-sub-header.component';
+import { ZMeStatusComponent } from './games/z-survival/ui/z-main/z-me/z-me-status/z-me-status.component';
+import { ZMeSkillComponent } from './games/z-survival/ui/z-main/z-me/z-me-skill/z-me-skill.component';
+import { ZMeTalentComponent } from './games/z-survival/ui/z-main/z-me/z-me-talent/z-me-talent.component';
+import { ZMeEquipmentComponent } from './games/z-survival/ui/z-main/z-me/z-me-equipment/z-me-equipment.component';
+import { ZMeInventoryComponent } from './games/z-survival/ui/z-main/z-me/z-me-inventory/z-me-inventory.component';
+import { ZMapComponent } from './games/z-survival/ui/z-main/z-map/z-map.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -57,6 +64,7 @@ const appRoutes: Routes = [
         children: [
           { path: '', component: ZHideComponent },
           { path: 'hide', component: ZHideComponent },
+          { path: 'map', component: ZMapComponent },
           { path: 'me', component: ZMeComponent },
 
         ]
@@ -94,7 +102,14 @@ const appRoutes: Routes = [
     CharacterSelectComponent,
     LoadingComponent,
     InputDebounceComponent,
-    ZMeComponent
+    ZMeComponent,
+    ZSubHeaderComponent,
+    ZMeStatusComponent,
+    ZMeSkillComponent,
+    ZMeTalentComponent,
+    ZMeEquipmentComponent,
+    ZMeInventoryComponent,
+    ZMapComponent
   ],
   imports: [
     AlertModule,

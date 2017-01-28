@@ -1,17 +1,19 @@
 @import '../../../../../../color';
 
 .z-me-container {
-  .w3-navbar li {
-    width: 20% !important;
-    display: inline-block;
-    text-align: center;
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 70px;
+  text-align: left;
+  .z-me-menu-container {
+    position: fixed;
+    top: 82px;
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+    background-color: black;
   }
-  @media screen and (max-width: 600px) {
-    .w3-navbar li {
-      width: 19% !important;
-      display: inline-block;
-      text-align: center;
-    }
+  .z-men-content {
+    margin-top: 32px;
   }
-
 }
